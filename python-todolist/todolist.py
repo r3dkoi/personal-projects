@@ -27,11 +27,17 @@ def main():
         #Showing tasks section
         elif choice == '2':
             print("\nTasks:")
-            for index, task in range(tasks):
+            #Looping through list of tasks with their indices
+            for index, task in enumerate(tasks):
+                #Calculating current index + 1
+                current_index = index + 1
+                #Retrieve task description from current task
+                task_description = task["task"]
+                #Get status of current task
                 if task["done"]:
                     status = "Done"
                 else:
                     status = "Not Done"
-            for task in n_tasks
+            
                 
             

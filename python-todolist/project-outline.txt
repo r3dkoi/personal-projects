@@ -34,22 +34,11 @@ PRINT the following:
 // Shows tasks that haven't been deleted
 
 ELIF choice is 2
-    PRINT "\nTasks:"
-    // Sets the tasks in a new line
-
-    FOR index, task in enumerate(tasks):
-    //enumerate(tasks) generates pairs of (index, task) 
-    // for each item in the tasks list []
-    // index is the index position
-    // task is the dictionary containing the
-    //  task details (gotten from the adding tasks section)
-
-        CREATE status and STORE "Done"
-            IF task["done"] else "Not Done"
-            //Checks the value of task: done
-            // if task["done"] is True, sets status to "Done"
-            // if task["done"] is False, sets status to "Not Done"
-
+    FOR each index and task in the list of tasks:
+        IF the task (dictionary) is marked as done:
+            SET status to "Done"
+        ELSE:
+            SET the status to "Not Done"
         FOR each task in the list of tasks:
             Calculate the current index plus 1
             Retrieve the task description from current task
