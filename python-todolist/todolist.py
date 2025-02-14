@@ -27,4 +27,11 @@ def main():
         #Showing tasks section
         elif choice == '2':
             print("\nTasks:")
-            for index, task
+            for index, task in range(tasks):
+                if task["done"]:
+                    status = "Done"
+                else:
+                    status = "Not Done"
+            for task in n_tasks
+                
+            
