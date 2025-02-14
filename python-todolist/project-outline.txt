@@ -96,4 +96,19 @@ https://pub.aimind.so/creating-a-simple-to-do-list-in-python-c0f52ab15814
 Problems encountered:
 1. Didn't know how to call the function when I made it via console so had to research how and why
 2. I need the Show List to appear once more again when someone's deleting a task so its more intuitive.
+Solution: Put the index and task description variables and stored it all into a task_list to make it do this.
+Other solution: Unnecessary i think.
 3. Wanted to have f string to say the specific task has been removed but when i do {task} it just gives me the full "task": task, "done": False. Need to figure this out.
+Solution: ?
+4. Add a way for users to be able to select a range of numbers on the task list to be marked as done.
+Solution: ?
+
+
+Other functionalities:
+1. Add reminders to do tasks - push notifications
+2 Add priorities to each task
+3. Add end dates to each task
+4. Add emojis (for fun)
+5. Ability to share tasks to others
+6. Add sound effects to buttons
+
