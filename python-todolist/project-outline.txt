@@ -61,10 +61,7 @@ ELIF the user's choice is '3'
         MARK task at given index as "done"
         PRINT message "Task marked as done."
     ELSE
-        PRINT "Invalid task numebr."
-
-
-
+        PRINT "Invalid task number."
 
 
 //Input
@@ -77,6 +74,15 @@ Task marked as done!
 //Once loop finishes, return to main Menu
 -----------------------------------------------------------
 #Deleting tasks function
+ELIF the choice is '4'
+    PROMPT the user to enter the task no. they want to delete
+    SUBTRACT 1 from the task list
+        IF the index is within a valid range (0 to length of task list)
+            REMOVE the task at given index from task list
+            MARK task at given index as "Deleted"
+        ELSE
+            PRINT "Invalid task number."
+
 //Input
 Enter the task numbers you wish to delete:
 
@@ -86,3 +92,8 @@ These tasks have been deleted.
 
 
 https://pub.aimind.so/creating-a-simple-to-do-list-in-python-c0f52ab15814
+
+Problems encountered:
+1. Didn't know how to call the function when I made it via console so had to research how and why
+2. I need the Show List to appear once more again when someone's deleting a task so its more intuitive.
+3. Wanted to have f string to say the specific task has been removed but when i do {task} it just gives me the full "task": task, "done": False. Need to figure this out.

@@ -38,7 +38,7 @@ def main():
                 else:
                     status = "Not Done"
                 #Print index, task description, and status
-                print(f"{current_index}.{task_description}: {status}.")
+                print(f"{current_index}. {task_description}: {status}.")
 
         #Marking tasks as done section
         elif choice == '3':
@@ -53,11 +53,12 @@ def main():
 
         #Deleting tasks section
         elif choice == '4':
+            print(tasks)
             deleted_choice = int(input("Please state the number of the task you wish to remove: ")) - 1
             if 0 <= deleted_choice <len(tasks):
                 #Removing task by index number from task list
-                tasks.remove(deleted_choice)
-                print(f'{task} has been removed')
+                tasks.remove(task)
+                print("Task has been removed.")
             else:
                 print("Invalid task number.")
 
@@ -68,6 +69,7 @@ def main():
         else:
             print("Invalid choice. Please choose from the listed options.")
 
+if __name__ == "__main__":
+    main()
 
-                
             
