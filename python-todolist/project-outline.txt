@@ -1,0 +1,68 @@
+====== TO DO LIST ======
+
+# Starting Menu
+//Input user choice
+// Print out the choices?
+
+
+1. Add Tasks
+2. Show Tasks
+3. Mark tasks as done
+4. Delete tasks
+5. Exit
+Enter your choice: 
+-----------------------------------------------------------
+#Adding tasks section
+
+IF choice is "1" 
+PRINT the following:
+    CREATE n_tasks and STORE as a INTEGER "How many tasks you want to add: "
+    FOR i in RANGE of n_tasks 
+        CREATE task and STORE input "Enter the task: "
+        CREATE tasks and APPEND task as a DICTIONARY "task: , "done": false
+        //It becomes a dictionary due to the key:value pair - the task and then the input of said task.
+        //by adding bool to the done key, it states that it's Not Done / false.
+
+
+
+//Input
+Enter the task:
+
+//Print
+Task added!
+(Loop as many times as user input earlier)
+
+//Once loop finishes, return to main Menu
+------------------------------------------------------------
+#Show tasks function
+// Sorted in descending order 
+// Shows tasks that arent done and are done
+// Shows tasks that haven't been deleted
+
+1. 'Task' - Not done
+2. 'Task' - Done
+3.
+etc
+
+//Once loop finishes, return to main Menu
+-----------------------------------------------------------
+#Marking tasks as done function
+//Input
+Enter the task number to mark as done: 
+
+//Print
+Task marked as done!
+
+(Find ways to allow user to mark multiple tasks as done)
+//Once loop finishes, return to main Menu
+-----------------------------------------------------------
+#Deleting tasks function
+//Input
+Enter the task numbers you wish to delete:
+
+//Print
+These tasks have been deleted.
+//Once loop finishes, return to main Menu
+
+
+https://pub.aimind.so/creating-a-simple-to-do-list-in-python-c0f52ab15814
