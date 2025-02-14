@@ -24,6 +24,7 @@ def main():
             for i in range(n_tasks):
                 task = input("Enter the task: ")
                 tasks.append({"task": task, "done": False})
+
         #Showing tasks section
         elif choice == '2':
             print("\nTasks:")
@@ -40,8 +41,19 @@ def main():
                     status = "Not Done"
                 #Print index, task description, and status
                 print(f"{current_index}.{task_description}: {status}.")
+
         #Marking tasks as done section
         elif choice == '3':
+            task_done_choice = int(input("Please put the number of the task you have done: ")) - 1
+            #Check if index is within the valid range
+            if 0 <= task_done_choice < len(tasks):
+                #Mark task at given index as done
+                tasks[task_done_choice]["done"] = True
+                print("Task marked as done.")
+            else:
+                print("Invalid task number.")
+
+
 
                 
             
