@@ -2,8 +2,6 @@ def main():
     """Holds all our tasks
     A while True loop used to keep program running until
     user decides to exit.
-
-    User is prompted to input their choice
     """
     tasks = []
     while True:
@@ -53,6 +51,22 @@ def main():
             else:
                 print("Invalid task number.")
 
+        #Deleting tasks section
+        elif choice == '4':
+            deleted_choice = int(input("Please state the number of the task you wish to remove: ")) - 1
+            if 0 <= deleted_choice <len(tasks):
+                #Removing task by index number from task list
+                tasks.remove(deleted_choice)
+                print(f'{task} has been removed')
+            else:
+                print("Invalid task number.")
+
+        #Exiting to do list section
+        elif choice == '5':
+            print("Exiting the To-Do List. Thank you :)")
+            break 
+        else:
+            print("Invalid choice. Please choose from the listed options.")
 
 
                 
