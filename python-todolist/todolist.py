@@ -38,6 +38,7 @@ def main():
                     status = "Done"
                 else:
                     status = "Not Done"
-            
+                #Print index, task description, and status
+                print(f"{current_index}.{task_description}: {status}.")
                 
             
