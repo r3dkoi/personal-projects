@@ -40,5 +40,8 @@ def main():
                     status = "Not Done"
                 #Print index, task description, and status
                 print(f"{current_index}.{task_description}: {status}.")
+        #Marking tasks as done section
+        elif choice == '3':
+
                 
             

@@ -46,8 +46,6 @@ ELIF choice is 2
             PRINT the index, task description, and status in the desired format.
 
 
-
-
 1. 'Task' - Not done
 2. 'Task' - Done
 3.
@@ -56,6 +54,19 @@ etc
 //Once loop finishes, return to main Menu
 -----------------------------------------------------------
 #Marking tasks as done function
+ELIF the user's choice is '3'
+    PROMPT the user to enter the task no. to mark as done and convert it
+    SUBTRACT 1 from the task no. to get correct index
+    IF the index is within the valid range 
+        MARK task at given index as "done"
+        PRINT message "Task marked as done."
+    ELSE
+        PRINT "Invalid task numebr."
+
+
+
+
+
 //Input
 Enter the task number to mark as done: 
 
