@@ -24,4 +24,7 @@ def main():
             for i in range(n_tasks):
                 task = input("Enter the task: ")
                 tasks.append({"task": task, "done": False})
-
+        #Showing tasks section
+        elif choice == '2':
+            print("\nTasks:")
+            for index, task

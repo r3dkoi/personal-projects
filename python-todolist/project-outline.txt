@@ -13,24 +13,18 @@
 Enter your choice: 
 -----------------------------------------------------------
 #Adding tasks section
-
+            
 IF choice is "1" 
 PRINT the following:
     CREATE n_tasks and STORE as a INTEGER "How many tasks you want to add: "
+    //depending on user number input, it'll keep going to add as many tasks as they want
+    
     FOR i in RANGE of n_tasks 
         CREATE task and STORE input "Enter the task: "
         CREATE tasks and APPEND task as a DICTIONARY "task: , "done": false
+       
         //It becomes a dictionary due to the key:value pair - the task and then the input of said task.
         //by adding bool to the done key, it states that it's Not Done / false.
-
-
-
-//Input
-Enter the task:
-
-//Print
-Task added!
-(Loop as many times as user input earlier)
 
 //Once loop finishes, return to main Menu
 ------------------------------------------------------------
@@ -38,6 +32,32 @@ Task added!
 // Sorted in descending order 
 // Shows tasks that arent done and are done
 // Shows tasks that haven't been deleted
+
+ELIF choice is 2
+    PRINT "\nTasks:"
+    // Sets the tasks in a new line
+
+    FOR index, task in enumerate(tasks):
+    //enumerate(tasks) generates pairs of (index, task) 
+    // for each item in the tasks list []
+    // index is the index position
+    // task is the dictionary containing the
+    //  task details (gotten from the adding tasks section)
+
+        CREATE status and STORE "Done"
+            IF task["done"] else "Not Done"
+            //Checks the value of task: done
+            // if task["done"] is True, sets status to "Done"
+            // if task["done"] is False, sets status to "Not Done"
+
+        FOR each task in the list of tasks:
+            Calculate the current index plus 1
+            Retrieve the task description from current task
+            Get the status of the current task
+            PRINT the index, task description, and status in the desired format.
+
+
+
 
 1. 'Task' - Not done
 2. 'Task' - Done
