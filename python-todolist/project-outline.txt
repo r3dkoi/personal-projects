@@ -1,10 +1,6 @@
 ====== TO DO LIST ======
 
 # Starting Menu
-//Input user choice
-// Print out the choices?
-
-
 1. Add Tasks
 2. Show Tasks
 3. Mark tasks as done
@@ -13,18 +9,11 @@
 Enter your choice: 
 -----------------------------------------------------------
 #Adding tasks section
-            
-IF choice is "1" 
-PRINT the following:
-    CREATE n_tasks and STORE as a INTEGER "How many tasks you want to add: "
-    //depending on user number input, it'll keep going to add as many tasks as they want
-    
-    FOR i in RANGE of n_tasks 
-        CREATE task and STORE input "Enter the task: "
-        CREATE tasks and APPEND task as a DICTIONARY "task: , "done": false
-       
-        //It becomes a dictionary due to the key:value pair - the task and then the input of said task.
+//depending on user number input, it'll keep going to add as many tasks as they want
+//It becomes a dictionary due to the key:value pair - the task and then the input of said task.
         //by adding bool to the done key, it states that it's Not Done / false.
+
+
 
 //Once loop finishes, return to main Menu
 ------------------------------------------------------------
@@ -111,4 +100,5 @@ Other functionalities:
 4. Add emojis (for fun)
 5. Ability to share tasks to others
 6. Add sound effects to buttons
+7. Add more task descriptions rather than just one statement
 
