@@ -1,5 +1,4 @@
 ====== TO DO LIST ======
-
 # Starting Menu
 1. Add Tasks
 2. Show Tasks
@@ -7,8 +6,10 @@
 4. Delete tasks
 5. Exit
 Enter your choice: 
+
 -----------------------------------------------------------
 #Adding tasks section
+
 //depending on user number input, it'll keep going to add as many tasks as they want
 //It becomes a dictionary due to the key:value pair - the task and then the input of said task.
         //by adding bool to the done key, it states that it's Not Done / false.
@@ -23,8 +24,10 @@ IF choice is equal to '1' THEN
         APPEND a dictionary with the task and its status (not done) to the list
 
 //Once loop finishes, return to main Menu
+
 ------------------------------------------------------------
 #Show tasks function
+
 // Sorted in descending order 
 // Shows tasks that arent done and are done
 // Shows tasks that haven't been deleted
@@ -48,8 +51,10 @@ ELIF choice is 2
 etc
 
 //Once loop finishes, return to main Menu
+
 -----------------------------------------------------------
 #Marking tasks as done function
+
 ELIF the user's choice is '3'
     PROMPT the user to enter the task no. to mark as done and convert it
     SUBTRACT 1 from the task no. to get correct index
@@ -62,14 +67,13 @@ ELIF the user's choice is '3'
 
 //Input
 Enter the task number to mark as done: 
-
 //Print
 Task marked as done!
-
-(Find ways to allow user to mark multiple tasks as done)
 //Once loop finishes, return to main Menu
+
 -----------------------------------------------------------
 #Deleting tasks function
+
 ELIF the choice is '4'
     PROMPT the user to enter the task no. they want to delete
     SUBTRACT 1 from the task list
@@ -97,6 +101,8 @@ Other solution: Unnecessary i think.
 3. Wanted to have f string to say the specific task has been removed but when i do {task} it just gives me the full "task": task, "done": False. Need to figure this out.
 Solution: ?
 4. Add a way for users to be able to select a range of numbers on the task list to be marked as done.
+Solution: ?
+5. Find ways to allow user to mark multiple tasks as done
 Solution: ?
 
 
