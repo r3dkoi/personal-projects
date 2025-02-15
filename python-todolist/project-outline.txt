@@ -13,7 +13,14 @@ Enter your choice:
 //It becomes a dictionary due to the key:value pair - the task and then the input of said task.
         //by adding bool to the done key, it states that it's Not Done / false.
 
-
+IF choice is equal to '1' THEN 
+    PRINT a blank line
+    CREATE variable n_tasks to STORE following PROMPT
+        PROMPT user for the number of tasks to add 
+    FOR i FROM range of n_tasks DO
+        CREATE variable task to STORE following PROMPT
+            PROMPT user to enter task description
+        APPEND a dictionary with the task and its status (not done) to the list
 
 //Once loop finishes, return to main Menu
 ------------------------------------------------------------
@@ -79,7 +86,7 @@ Enter the task numbers you wish to delete:
 These tasks have been deleted.
 //Once loop finishes, return to main Menu
 
-
+Reference:
 https://pub.aimind.so/creating-a-simple-to-do-list-in-python-c0f52ab15814
 
 Problems encountered:
