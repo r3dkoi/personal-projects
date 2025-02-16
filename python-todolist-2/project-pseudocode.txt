@@ -29,25 +29,54 @@ DEFINE function as main() #This is where I will hold the entire program
 
 ### ADDING TASKS ###
 // Adding tasks as a parameter means that this function will be using the values inside the tasks list []
-DEFINE function as adding_tasks with parameter tasks
+DEFINE function as adding_tasks with parameter tasks DO
     PRINT new line "==== ADDING TASKS ====="
     //this keeps this section of the program going until user gives valid input
     WHILE True DO
         TRY:
-            CREATE n_tasks to STORE following PROMPT
+            CREATE n_tasks to STORE following PROMPT THEN
                 PROMPT user to input as a integer "How many tasks would you like to add: "
-                IF user inputs integer:
+                IF user inputs integer THEN
                     EXIT while loop and continue program
         EXCEPT ValueError:
             PRINT "Please enter a valid number."
-    //Creates a task list depending on the number the user had given
+    //Creates a task list that ends on the amount the user had given
     FOR i FROM range of n_tasks DO
-        CREATE variable task to STORE following PROMPT 
+        CREATE variable task to STORE following PROMPT THEN
             PROMPT user to enter task description. Input should be case-insensitive.
         APPEND task to tasks as a dictionary with task description and its status as not done (false).
-        tasks.task({Task: task, status: false})
+        tasks.task({Task: task, done: false})
+
 
 ### SHOW TASK LIST ###
+// Adding tasks as a parameter means that this function will be using the values inside the tasks list []
+DEFINE function as showing_tasks with parameter tasks DO
+    PRINT new line "=== SHOW TASK LIST ==="
+    IF tasks is empty THEN
+        PRINT "No tasks to show."
+    ELSE
+    PRINT "Your current tasks: "
+    //Enumerate method is used here since I want to show the index and task in the list
+    FOR EACH index, task IN enumerate(tasks) DO
+        IF task has value of done DO
+            print("Done")
+        ELSE:
+            print("Not done")
+    
+            #increments index by 1 
+        CREATE variable current_index and STORE index + 1 
+            #Takes the task value from adding_tasks function
+        CREATE variable task_description and STORE task value
+            #Takes the status value from adding_tasks function 
+        CREATE variable status and STORE done value
+            #F-string to input the values from index, task, and done
+        PRINT ("current_index. Task: task_description. Status: status")
+
+#### DELETE TASKS ###
+
+
+        
+
 
 
 
