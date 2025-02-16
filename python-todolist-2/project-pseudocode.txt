@@ -27,5 +27,27 @@ DEFINE function as main() #This is where I will hold the entire program
 
 # CORE FUNCTIONS / FOR THE functions.py
 
+### ADDING TASKS ###
 // Adding tasks as a parameter means that this function will be using the values inside the tasks list []
-DEFINE function as adding_tasks with parameters as tasks
+DEFINE function as adding_tasks with parameter tasks
+    PRINT new line "==== ADDING TASKS ====="
+    //this keeps this section of the program going until user gives valid input
+    WHILE True DO
+        TRY:
+            CREATE n_tasks to STORE following PROMPT
+                PROMPT user to input as a integer "How many tasks would you like to add: "
+                IF user inputs integer:
+                    EXIT while loop and continue program
+        EXCEPT ValueError:
+            PRINT "Please enter a valid number."
+    //Creates a task list depending on the number the user had given
+    FOR i FROM range of n_tasks DO
+        CREATE variable task to STORE following PROMPT 
+            PROMPT user to enter task description. Input should be case-insensitive.
+        APPEND task to tasks as a dictionary with task description and its status as not done (false).
+        tasks.task({Task: task, status: false})
+
+### SHOW TASK LIST ###
+
+
+
