@@ -16,9 +16,13 @@ def main():
 
         #Adding tasks section
         if choice == '1':
-            print()
-            n_tasks = int(input("How many tasks do you want to add: "))
-
+            while True:
+                print()
+                try:
+                        n_tasks = int(input("How many tasks do you want to add: "))
+                        break
+                except ValueError:
+                        print("Please enter a valid number.")
             for i in range(n_tasks):
                 task = input("Enter the task: ")
                 tasks.append({"task": task, "done": False})
