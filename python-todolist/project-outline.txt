@@ -21,10 +21,10 @@ IF choice is equal to '1' THEN
         CREATE variable n_tasks to STORE following PROMPT
             PROMPT user for the number of tasks to add 
             IF user inputs an integer:
-                EXIT loop and continues the program
+                EXIT while loop and continues the program
     EXCEPT ValueError:
         PRINT "Please enter a valid number."
-        
+
     FOR i FROM range of n_tasks DO
         CREATE variable task to STORE following PROMPT
             PROMPT user to enter task description
@@ -34,10 +34,13 @@ IF choice is equal to '1' THEN
 
 ------------------------------------------------------------
 #Show tasks function
-
 // Sorted in descending order 
 // Shows tasks that arent done and are done
 // Shows tasks that haven't been deleted
+
+ADD tasks parameter to showing_tasks function, passes 
+    the tasks argument to function so it can use its information.
+
 
 ELIF choice is 2
     FOR each index and task in the list of tasks:
@@ -102,17 +105,30 @@ https://pub.aimind.so/creating-a-simple-to-do-list-in-python-c0f52ab15814
 
 Problems encountered:
 1. Didn't know how to call the function when I made it via console so had to research how and why
+
 2. I need the Show List to appear once more again when someone's deleting a task so its more intuitive.
 Solution: Put the index and task description variables and stored it all into a task_list to make it do this.
 Other solution: Unnecessary i think.
+
 3. Wanted to have f string to say the specific task has been removed but when i do {task} it just gives me the full "task": task, "done": False. Need to figure this out.
 Solution: ?
+
 4. Add a way for users to be able to select a range of numbers on the task list to be marked as done.
 Solution: ?
+
 5. Find ways to allow user to mark multiple tasks as done
 Solution: ?
+
 6. Feedback from user stated that they received an error in the Adding task section when they inputted string characters rather than integers.
 Solution: Added a try-except block to redirect user to input integers/numbers
+
+7. How to add file handling so to-do list can retrieve tasks from file memory 
+from last user input before they shut the program. How to store it in directory.
+
+Solution: ?
+
+8. Make more functions rather than grouping them up in def main():
+Solution: Create a separate functions file?
 
 Other functionalities:
 1. Add reminders to do tasks - push notifications
