@@ -6,7 +6,7 @@
 ###
 
 #Importing functions section
-from functions.py import adding_tasks()
+from functions.py import adding_tasks(); showing_tasks(tasks); marking_tasks(tasks); deleting_tasks(tasks)
 
 def main():
     """Holds all our tasks
@@ -21,54 +21,24 @@ def main():
         print("3. Mark tasks as done")
         print("4. Delete tasks")
         print("5. Exit")
-
         choice = input("Enter your choice: ")
-
-        #Adding tasks section
+        #Adding tasks
         if choice == '1':
             tasks = adding_tasks(choice)
             print(tasks)
-
-        #Showing tasks section
+        #Showing tasks
         elif choice == '2':
-            print("\nTasks:")
-            #Looping through list of tasks with their indices
-            for index, task in enumerate(tasks):
-                #Calculating current index + 1
-                current_index = index + 1
-                #Retrieve task description from current task
-                task_description = task["task"]
-                #Get status of current task
-                if task["done"]:
-                    status = "Done"
-                else:
-                    status = "Not Done"
-                #Print index, task description, and status
-                print(f"{current_index}. {task_description}: {status}.")
-               
-
-        #Marking tasks as done section
+            tasks = showing_tasks(choice)
+            print(tasks)
+        #Marking tasks as done 
         elif choice == '3':
-            task_done_choice = int(input("Please put the number of the task you have done: ")) - 1
-            #Check if index is within the valid range
-            if 0 <= task_done_choice < len(tasks):
-                #Mark task at given index as done
-                tasks[task_done_choice]["done"] = True
-                print("Task marked as done.")
-            else:
-                print("Invalid task number. Returning you to main menu.")
-
+            tasks = marking_tasks(choice)
+            print(tasks)
         #Deleting tasks section
         elif choice == '4':
-            deleted_choice = int(input("Please state the number of the task you wish to remove: ")) - 1
-            if 0 <= deleted_choice <len(tasks):
-                #Removing task by index number from task list
-                tasks.remove(task)
-                print("Task has been removed.")
-            else:
-                print("Invalid task number. Returning you to main menu.")
-
-        #Exiting to do list section
+            tasks = deleting_tasks(choice)
+            print(tasks)
+        #Exiting to do list program
         elif choice == '5':
             print("Exiting the To-Do List. Thank you :)")
             break 

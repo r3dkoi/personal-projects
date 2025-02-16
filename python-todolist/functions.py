@@ -11,7 +11,7 @@ def adding_tasks():
             for i in range(n_tasks):
                 task = input("Enter the task: ")
                 tasks.append({"task": task, "done": False})
-             return tasks
+            return tasks
 
 def showing_tasks(tasks):
     print("\nTasks:")
@@ -39,3 +39,13 @@ def marking_tasks(tasks):
         print("Task marked as done.")
     else:
         print("Invalid task number. Returning you to main menu.")
+
+def deleting_tasks(tasks):
+    deleted_choice = int(input("Please state the number of the task you wish to remove: ")) - 1
+    if 0 <= deleted_choice <len(tasks):
+            #Removing task by index number from task list
+            tasks.remove(task)
+            print("Task has been removed.")
+    else:
+            print("Invalid task number. Returning you to main menu.")
+            return tasks
