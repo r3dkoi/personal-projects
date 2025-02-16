@@ -1,3 +1,36 @@
 TAKE TWO OF PYTHON TO-DO LIST
 
 PROJECT OUTPUT VISION:
+==== TO DO LIST ====
+Welcome to the main menu
+1. Add tasks
+2. Show tasks
+3. Delete tasks
+4. Mark tests as done
+5. Exit 
+
+==== ADDING TASKS ====
+How many tasks would you like to add:
+Task added!
+
+==== SHOW TASK LIST ====
+Your current to-do list:
+1. Task:  Status: 
+2.
+3.
+
+==== DELETE TASKS ====
+Choose the task's number you wish to delete:
+Task deleted!
+
+==== MARKING TASKS ====
+The task's number you would like to mark as done:
+Task marked as finished! Well done.
+
+==== EXIT ====
+Thank you for using this program! 
+See you later :).
+
+STEP 1. Begin with Core Program 
+STEP 2. Integrate data
+STEP 3. File handling
