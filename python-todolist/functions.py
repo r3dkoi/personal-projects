@@ -30,3 +30,12 @@ def showing_tasks(tasks):
         print(f"{current_index}. {task_description}: {status}.")
         return tasks
 
+def marking_tasks(tasks):
+    task_done_choice = int(input("Please put the number of the task you have done: ")) - 1
+            #Check if index is within the valid range
+    if 0 <= task_done_choice < len(tasks):
+        #Mark task at given index as done
+        tasks[task_done_choice]["done"] = True
+        print("Task marked as done.")
+    else:
+        print("Invalid task number. Returning you to main menu.")
