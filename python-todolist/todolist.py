@@ -1,3 +1,13 @@
+###
+# Personal Management Tool Main File
+# CST180
+# Student No: 1034672
+
+###
+
+#Importing functions section
+from functions.py import adding_tasks()
+
 def main():
     """Holds all our tasks
     A while True loop used to keep program running until
@@ -16,16 +26,8 @@ def main():
 
         #Adding tasks section
         if choice == '1':
-            while True:
-                print()
-                try:
-                        n_tasks = int(input("How many tasks do you want to add: "))
-                        break
-                except ValueError:
-                        print("Please enter a valid number.")
-            for i in range(n_tasks):
-                task = input("Enter the task: ")
-                tasks.append({"task": task, "done": False})
+            tasks = adding_tasks(choice)
+            print(tasks)
 
         #Showing tasks section
         elif choice == '2':
