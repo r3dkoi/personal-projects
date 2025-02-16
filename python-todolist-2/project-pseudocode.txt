@@ -1,0 +1,31 @@
+DEFINE function as main() #This is where I will hold the entire program
+    CREATE list called tasks, which will store the values inputted by user
+
+    WHILE condition is True DO #Program continues until user inputs a value
+        PRINT new line "==== TO DO LIST ===="
+        PRINT new line "Welcome to the Main Menu"
+        PRINT "1. Add tasks"
+        PRINT "2. Show tasks"
+        PRINT "3. Delete tasks"
+        PRINT "4. Mark tests as done"
+        PRINT "5. Exit"
+        PROMPT user to input a integer "Choose a number to begin: "
+
+        #Creating separate functions for each option for better readability
+        IF choice is equal to '1' DO
+            PRINT adding_tasks function with choice
+        ELIF choice is equal to '2' DO  
+            PRINT show_tasks function with choice
+        ELIF choice is equal to '3' DO
+            PRINT delete_tasks function with choice
+        ELIF choice is equal to '4' DO
+            PRINT marking_tests function with choice
+        ELIF choice is equal to '5' DO
+            PRINT exit function with choice
+        ELSE
+            PRINT "Please choose from the options above only. Thank you."
+
+# CORE FUNCTIONS / FOR THE functions.py
+
+// Adding tasks as a parameter means that this function will be using the values inside the tasks list []
+DEFINE function as adding_tasks with parameters as tasks
