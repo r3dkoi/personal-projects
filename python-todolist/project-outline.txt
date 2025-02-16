@@ -16,8 +16,15 @@ Enter your choice:
 
 IF choice is equal to '1' THEN 
     PRINT a blank line
-    CREATE variable n_tasks to STORE following PROMPT
-        PROMPT user for the number of tasks to add 
+    WHILE True:
+    TRY:
+        CREATE variable n_tasks to STORE following PROMPT
+            PROMPT user for the number of tasks to add 
+            IF user inputs an integer:
+                EXIT loop and continues the program
+    EXCEPT ValueError:
+        PRINT "Please enter a valid number."
+        
     FOR i FROM range of n_tasks DO
         CREATE variable task to STORE following PROMPT
             PROMPT user to enter task description
@@ -104,7 +111,8 @@ Solution: ?
 Solution: ?
 5. Find ways to allow user to mark multiple tasks as done
 Solution: ?
-
+6. Feedback from user stated that they received an error in the Adding task section when they inputted string characters rather than integers.
+Solution: Added a try-except block to redirect user to input integers/numbers
 
 Other functionalities:
 1. Add reminders to do tasks - push notifications
