@@ -88,7 +88,21 @@ DEFINE function as deleting_tasks with parameter (tasks) DO
             EXCEPT ValueError DO
                 PRINT "Please select a valid number from the task list."
         
-            
+### MARKING TASKS ###
+DEFINE function as marking_tasks with parameter tasks
+    PRINT new line "=== MARKING TASKS ==="
+    IF tasks is empty DO
+        PRINT "No tasks to mark as complete."
+    WHILE true DO
+        TRY DO
+            CREATE marked_task variable THEN
+                PROMPT user to input a integer "Choose the task number you wish to mark as complete: "
+        IF marked_task IN tasks DO
+            PRINT format string "Task: task_description is marked as complete. Well done."
+        EXCEPT ValueError DO
+            PRINT "Please select a valid number from the task list."
+
+### EXIT ###
 
         
 
