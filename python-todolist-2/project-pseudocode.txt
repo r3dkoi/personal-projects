@@ -12,18 +12,21 @@ DEFINE function as main() #This is where I will hold the entire program
         PROMPT user to input a integer "Choose a number to begin: "
 
         #Creating separate functions for each option for better readability
-        IF choice is equal to '1' DO
-            PRINT adding_tasks function with choice
-        ELIF choice is equal to '2' DO  
-            PRINT show_tasks function with choice
-        ELIF choice is equal to '3' DO
-            PRINT delete_tasks function with choice
-        ELIF choice is equal to '4' DO
-            PRINT marking_tests function with choice
-        ELIF choice is equal to '5' DO
-            PRINT exit function with choice
-        ELSE DO
-            PRINT "Please choose from the options above only. Thank you."
+            TRY DO
+                IF choice is equal to '1' DO
+                    PRINT adding_tasks function with choice
+                ELIF choice is equal to '2' DO  
+                    PRINT show_tasks function with choice
+                ELIF choice is equal to '3' DO
+                    PRINT delete_tasks function with choice
+                ELIF choice is equal to '4' DO
+                    PRINT marking_tests function with choice
+                ELIF choice is equal to '5' DO
+                    PRINT exit function with choice
+                ELSE DO
+                    PRINT "Please choose from the options above only. Thank you."
+            EXCEPT ValueError DO
+                PRINT "Please enter a valid number only, not whatever you just did. Thanks :)"
 
 # CORE FUNCTIONS / FOR THE functions.py
 
@@ -103,7 +106,11 @@ DEFINE function as marking_tasks with parameter tasks
             PRINT "Please select a valid number from the task list."
 
 ### EXIT ###
-
+DEFINE function as exit, no parameters needed
+    PRINT new line "=== EXIT ==="
+    PRINT "Thank you for using this program!"
+    PRINT "See you later :)."
+        END 
         
 
 
