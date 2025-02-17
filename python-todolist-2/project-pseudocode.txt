@@ -72,7 +72,7 @@ DEFINE function as showing_tasks with parameter tasks DO
             #F-string to input the values from index, task, and done
         PRINT ("current_index. Task: task_description. Status: status")
 
-#### DELETE TASKS ###
+### DELETE TASKS ###
 DEFINE function as deleting_tasks with parameter (tasks) DO
     PRINT new line "=== DELETE TASKS ==="
     IF tasks is empty DO
@@ -84,9 +84,10 @@ DEFINE function as deleting_tasks with parameter (tasks) DO
             CREATE task_deleted variable THEN  
                 PROMPT user to input a integer "Choose the task's number that you wish to delete: "
              IF task_deleted IN tasks DO
-                PRINT 
+                PRINT f-string "Task: task_description will be deleted."
             EXCEPT ValueError DO
                 PRINT "Please select a valid number from the task list."
+        
             
 
         
