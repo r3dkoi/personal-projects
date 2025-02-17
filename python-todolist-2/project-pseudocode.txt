@@ -22,7 +22,7 @@ DEFINE function as main() #This is where I will hold the entire program
             PRINT marking_tests function with choice
         ELIF choice is equal to '5' DO
             PRINT exit function with choice
-        ELSE
+        ELSE DO
             PRINT "Please choose from the options above only. Thank you."
 
 # CORE FUNCTIONS / FOR THE functions.py
@@ -54,7 +54,7 @@ DEFINE function as showing_tasks with parameter tasks DO
     PRINT new line "=== SHOW TASK LIST ==="
     IF tasks is empty THEN
         PRINT "No tasks to show."
-    ELSE
+    ELSE DO
     PRINT "Your current tasks: "
     //Enumerate method is used here since I want to show the index and task in the list
     FOR EACH index, task IN enumerate(tasks) DO
@@ -73,7 +73,21 @@ DEFINE function as showing_tasks with parameter tasks DO
         PRINT ("current_index. Task: task_description. Status: status")
 
 #### DELETE TASKS ###
-
+DEFINE function as deleting_tasks with parameter (tasks) DO
+    PRINT new line "=== DELETE TASKS ==="
+    IF tasks is empty DO
+        PRINT "No tasks to delete."
+    ELSE DO
+    #Creating loop so user inputs the right value. TRY-EXCEPT lets me bypass this possible error.
+        WHILE true DO
+            TRY DO
+            CREATE task_deleted variable THEN  
+                PROMPT user to input a integer "Choose the task's number that you wish to delete: "
+             IF task_deleted IN tasks DO
+                PRINT 
+            EXCEPT ValueError DO
+                PRINT "Please select a valid number from the task list."
+            
 
         
 
