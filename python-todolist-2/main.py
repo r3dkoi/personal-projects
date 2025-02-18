@@ -21,15 +21,15 @@ def main():
         try:
             choice = int(input("Choose a number to begin: ")) #Prompts user to begin the program
 
-            if choice == "1":
+            if choice == 1:
                 adding_tasks(choice)
-            elif choice == "2":
+            elif choice == 2:
                 show_tasks(choice)
-            elif choice == "3":
+            elif choice == 3:
                 delete_tasks(choice)
-            elif choice == "4":
+            elif choice == 4:
                 marking_tests(choice)
-            elif choice == "5":
+            elif choice == 5:
                 exit(choice)
             else:
                 print("Please choose from the options above only. Thank you.")
