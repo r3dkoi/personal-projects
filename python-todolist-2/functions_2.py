@@ -10,7 +10,7 @@ def adding_tasks(tasks): #Will be altering the tasks variable
         except ValueError:
             print("Please enter a valid number.")
     for i in range(n_tasks): #Creates task list that ends on amount user had inputted
-        task = print("Please enter task description").lower
+        task = input("Please enter task description").lower
         tasks.task({
             "Task:", task,
             "done:", False
