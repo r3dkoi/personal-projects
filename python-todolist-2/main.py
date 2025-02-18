@@ -24,17 +24,17 @@ def main():
 
         try:
             if choice == "1":
-                print adding_tasks(choice)
+                print((adding_tasks(choice)))
             elif choice == "2":
-                print show_tasks(choice)
+                print((show_tasks(choice)))
             elif choice == "3":
-                print delete_tasks(choice)
+                print((delete_tasks(choice)))
             elif choice == "4":
-                print marking_tests(choice)
+                print((marking_tests(choice)))
             elif choice == "5":
-                print exit(choice)
+                print((exit(choice)))
             else:
                 print("Please choose from the options above only. Thank you.")
         except ValueError:
             print("Please enter a valid number only. Not whatever you just did. Thanks :)")
-            
+
