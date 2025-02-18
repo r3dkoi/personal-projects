@@ -22,15 +22,15 @@ def main():
             choice = int(input("Choose a number to begin: ")) #Prompts user to begin the program
 
             if choice == 1:
-                adding_tasks(choice)
+                adding_tasks(tasks)
             elif choice == 2:
-                show_tasks(choice)
+                show_tasks(tasks)
             elif choice == 3:
-                delete_tasks(choice)
+                delete_tasks(tasks)
             elif choice == 4:
-                marking_tests(choice)
+                marking_tests(tasks)
             elif choice == 5:
-                exit(choice)
+                exit()
             else:
                 print("Please choose from the options above only. Thank you.")
         except ValueError:
