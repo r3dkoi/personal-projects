@@ -11,7 +11,7 @@ def adding_tasks(tasks): #Will be altering the tasks variable
             print("Please enter a valid number.")
     for i in range(n_tasks): #Creates task list that ends on amount user had inputted
         task = input("Please enter task description").lower
-        tasks.task({
+        tasks.append({
             "Task:", task,
             "done:", False
         }) #Status is set to false initially.
