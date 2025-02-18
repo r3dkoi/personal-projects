@@ -13,16 +13,16 @@ DEFINE function as main() #This is where I will hold the entire program
 
         #Creating separate functions for each option for better readability
             TRY DO
-                IF choice is equal to '1' DO
-                    PRINT adding_tasks function with choice
-                ELIF choice is equal to '2' DO  
-                    PRINT show_tasks function with choice
-                ELIF choice is equal to '3' DO
-                    PRINT delete_tasks function with choice
-                ELIF choice is equal to '4' DO
-                    PRINT marking_tests function with choice
-                ELIF choice is equal to '5' DO
-                    PRINT exit function with choice
+                IF choice is equal to 1 DO
+                    adding_tasks function with tasks
+                ELIF choice is equal to 2 DO  
+                    show_tasks function with tasks
+                ELIF choice is equal to 3 DO
+                    delete_tasks function with tasks
+                ELIF choice is equal to 4 DO
+                    marking_tests function with tasks
+                ELIF choice is equal to 5 DO
+                    exit function with tasks
                 ELSE DO
                     PRINT "Please choose from the options above only. Thank you."
             EXCEPT ValueError DO
@@ -44,11 +44,11 @@ DEFINE function as adding_tasks with parameter tasks DO
         EXCEPT ValueError:
             PRINT "Please enter a valid number."
     //Creates a task list that ends on the amount the user had given
-    FOR i FROM range of n_tasks DO
+    FOR i IN range of n_tasks DO
         CREATE variable task to STORE following PROMPT THEN
             PROMPT user to enter task description. Input should be case-insensitive.
         APPEND task to tasks as a dictionary with task description and its status as not done (false).
-        tasks.task({Task: task, done: false})
+        tasks.append({Task: task, done: false})
 
 
 ### SHOW TASK LIST ###
