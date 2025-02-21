@@ -6,16 +6,16 @@
 ###
 
 #Importing functions section
-from functions.py import adding_tasks(); showing_tasks(tasks); marking_tasks(tasks); deleting_tasks(tasks)
+""" from functions.py import adding_tasks(); showing_tasks(tasks); marking_tasks(tasks); deleting_tasks(tasks)
 
 def main():
-    """Holds all our tasks
+  Holds all our tasks
     A while True loop used to keep program running until
     user decides to exit.
-    """
+    
     tasks = []
     while True:
-        print("\n==== To-Do List ====")
+        print("==== To-Do List ====")
         print("1. Add tasks")
         print("2. Show tasks")
         print("3. Mark tasks as done")
@@ -48,4 +48,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-            
+            """

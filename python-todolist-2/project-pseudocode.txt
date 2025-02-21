@@ -62,16 +62,14 @@ DEFINE function as showing_tasks with parameter tasks DO
     //Enumerate method is used here since I want to show the index and task in the list
     FOR EACH index, task IN enumerate(tasks) DO
         IF task has value of done DO
-            print("Done")
+             CREATE variable status and STORE "Done"
         ELSE:
-            print("Not done")
+            CREATE variable status and STORE "Not done"
     
-            #increments index by 1 
         CREATE variable current_index and STORE index + 1 
             #Takes the task value from adding_tasks function
-        CREATE variable task_description and STORE task value
-            #Takes the status value from adding_tasks function 
-        CREATE variable status and STORE done value
+        CREATE variable task_description and STORE
+            task and ACCESS only the "Tasks" from the dictionary.
             #F-string to input the values from index, task, and done
         PRINT ("current_index. Task: task_description. Status: status")
 
@@ -81,13 +79,18 @@ DEFINE function as deleting_tasks with parameter (tasks) DO
     IF tasks is empty DO
         PRINT "No tasks to delete."
     ELSE DO
-    #Creating loop so user inputs the right value. TRY-EXCEPT lets me bypass this possible error.
-        WHILE true DO
             TRY DO
-            CREATE task_deleted variable THEN  
+            CREATE task_deleted variable and STORE 
                 PROMPT user to input a integer "Choose the task's number that you wish to delete: "
-             IF task_deleted IN tasks DO
+             IF task_deleted is greater than or equal to 0 AND less than the LENGTH of tasks
+                CREATE variable deleted_task_display and STORE
+                    ACCESS the tasks list and specify task_deleted is being selected, and the "Task" value being selected.
+                    DELETE the task_deleted value from tasks list #Removes specified index from the list
+                    PRINT "The task: deleted_task_display has been deleted."
+                
+                REMOVE the task from the list of tasks
                 PRINT f-string "Task: task_description will be deleted."
+                END
             EXCEPT ValueError DO
                 PRINT "Please select a valid number from the task list."
         
@@ -96,7 +99,6 @@ DEFINE function as marking_tasks with parameter tasks
     PRINT new line "=== MARKING TASKS ==="
     IF tasks is empty DO
         PRINT "No tasks to mark as complete."
-    WHILE true DO
         TRY DO
             CREATE marked_task variable THEN
                 PROMPT user to input a integer "Choose the task number you wish to mark as complete: "

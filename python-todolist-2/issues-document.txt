@@ -42,3 +42,6 @@ Solution: Fixed syntax in my adding_tasks section, I added a : after the key val
 13. Printing out the entire task list code when I just needed the task description that the user inputs
 Solution: Because I added the user input's tasks into a dictionary, in order to just access each task, I need to access specifically the dictionary.
                 Hence why I needed to do task["Task"]
+
+14. Made an infinite loop when trying to test out the delete function
+Solution: Removed the while loop and did a if-in statement instead. 

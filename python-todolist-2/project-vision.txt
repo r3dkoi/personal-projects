@@ -35,14 +35,26 @@ No tasks to delete.
 1. Choose the task's number you wish to delete:
 Task: [Insert task description] will be deleted."
 
+//If user inputs not a number in the task list
+"Please select a valid number from the task list."
+
 
 ==== MARKING TASKS ====
+//If no tasks
+No tasks to mark as complete.
+
+//If there's tasks
 The task's number you would like to mark as done:
 Task marked as finished! Well done.
+
+//If user inputs not a valid number from task list.
+"Please select a valid number from the task list."
 
 ==== EXIT ====
 Thank you for using this program! 
 See you later :).
+
+
 
 STEP 1. Begin with Core Program 
 STEP 2. Integrate data

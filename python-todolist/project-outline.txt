@@ -111,7 +111,7 @@ Solution: Put the index and task description variables and stored it all into a 
 Other solution: Unnecessary i think.
 
 3. Wanted to have f string to say the specific task has been removed but when i do {task} it just gives me the full "task": task, "done": False. Need to figure this out.
-Solution: ?
+Solution: Added the in keyword to check if the deleted_task is found in tasks. This will allow me to do a format string to see the task description.
 
 4. Add a way for users to be able to select a range of numbers on the task list to be marked as done.
 Solution: ?

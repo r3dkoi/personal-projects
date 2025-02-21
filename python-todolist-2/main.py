@@ -3,7 +3,7 @@ WELCOME!
 Student Name: Kyla Sofocado
 Student Number: 10346722
 """
-from functions_2 import adding_tasks, show_tasks
+from functions_2 import adding_tasks, show_tasks, delete_tasks
 tasks = []  #Stores the task list
 
 def main():
