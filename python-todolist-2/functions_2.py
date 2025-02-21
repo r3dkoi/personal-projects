@@ -32,5 +32,19 @@ def show_tasks(tasks):
             task_description = task["Task"] #Accesses the task value inputted by the user from adding_tasks's dictionary.
             print(f"{current_index}. Task: {task_description}. Status: {status}.")
 
+def delete_tasks(tasks):
+    print("==== DELETE TASKS ====")
+    if not tasks: 
+        print("No tasks to delete.")
+    else:
+        while True:
+            try:
+                task_deleted = int(input("Choose the task's number that you wish to delete: "))
+                if task_deleted in tasks: #Checks if the number the user inputted is in the index range of the task list
+                    tasks.remove(task) #Removes the specified task at the index number from the list
+                    print(f"Task: {task_description} will be deleted.")
+            except ValueError:
+                print("Please select a valid number from the task list.")
+
 
         
