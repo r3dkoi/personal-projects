@@ -11,7 +11,7 @@ def adding_tasks(tasks): #Will be altering the tasks variable
         except ValueError:
             print("Please enter a valid number.")
     for i in range(n_tasks): #Creates task list that ends on amount user had inputted
-        task = input("Please enter task description: ").lower()
+        task = input("Please enter task description: ")
         tasks.append({
             "Task": task,
             "done": False
@@ -37,10 +37,9 @@ def delete_tasks(tasks):
     if not tasks: 
         print("No tasks to delete.")
     else:
-        while True:
             try:
                 task_deleted = int(input("Choose the task's number that you wish to delete: "))
-                if task_deleted in tasks: #Checks if the number the user inputted is in the index range of the task list
+                if 0 <= task_deleted and < len(tasks): #Checks if the number the user inputted is in the index range of the task list
                     tasks.remove(task) #Removes the specified task at the index number from the list
                     print(f"Task: {task_description} will be deleted.")
             except ValueError:
