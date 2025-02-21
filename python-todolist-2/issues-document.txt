@@ -34,3 +34,11 @@ Solution: ValueError was being raised outside of the try block.
 11. When assigning a function to a numbered choice, it comes up as a invalid option
 Solution: Removed the print in front of the functions, since it would come out as a string and not as a integer.
         Also removed the "" that was surrounding the number choices. It converted it into a string, which wasn't my intention.
+        Changed parameters to (tasks) in main.py instead of (choice) because it won't be called the function properly.
+
+12. TypeError: 'set' object is not subscriptable. Apparently I was treating the task["done"] as a set instead of a dictionary, which is my intention of having a dictonary.
+Solution: Fixed syntax in my adding_tasks section, I added a : after the key value.
+
+13. Printing out the entire task list code when I just needed the task description that the user inputs
+Solution: Because I added the user input's tasks into a dictionary, in order to just access each task, I need to access specifically the dictionary.
+                Hence why I needed to do task["Task"]
