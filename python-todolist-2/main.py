@@ -1,9 +1,11 @@
 """PERSONAL MANAGEMENT TOOL - TO DO LIST
 WELCOME!
 Student Name: Kyla Sofocado
-Student Number: 1034672
+Student Number: 10346722
 """
-from functions_2 import adding_tasks
+from functions_2 import adding_tasks, show_tasks
+tasks = []  #Stores the task list
+
 def main():
     """
     This function holds the main program and where the tasks will be stored.
