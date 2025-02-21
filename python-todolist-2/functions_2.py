@@ -19,7 +19,7 @@ def adding_tasks(tasks): #Will be altering the tasks variable
 
 def show_tasks(tasks):
     print("==== SHOW TASKS ====")
-    if tasks == 0:
+    if not tasks:
         print("No tasks to show. Add some now.")
     else:
         print("Your current tasks: ")
