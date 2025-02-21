@@ -39,9 +39,10 @@ def delete_tasks(tasks):
     else:
             try:
                 task_deleted = int(input("Choose the task's number that you wish to delete: "))
-                if 0 <= task_deleted and < len(tasks): #Checks if the number the user inputted is in the index range of the task list
-                    tasks.remove(task) #Removes the specified task at the index number from the list
-                    print(f"Task: {task_description} will be deleted.")
+                if 0 <= task_deleted and task_deleted < len(tasks): #Checks if the number the user inputted is in the index range of the task list
+                   deleted_task_display = tasks[task_deleted]["Task"] #Accesses task list and the created task is selected via the inputted index value
+                   del tasks[task_deleted] #Removes specified index from the list
+                   print(f"The task: {deleted_task_display} has been deleted.")
             except ValueError:
                 print("Please select a valid number from the task list.")
 
