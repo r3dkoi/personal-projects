@@ -13,8 +13,8 @@ def adding_tasks(tasks): #Will be altering the tasks variable
     for i in range(n_tasks): #Creates task list that ends on amount user had inputted
         task = input("Please enter task description: ").lower()
         tasks.append({
-            "Task":, task,
-            "done":, False
+            "Task": task,
+            "done": False
         }) #Status is set to false initially.
 
 def show_tasks(tasks):
@@ -29,7 +29,7 @@ def show_tasks(tasks):
             else:
                 status = "Not done"
             current_index = index + 1 #increments index no. by 1 depending on range from n_tasks
-            task_description = task #Takes the task value from adding_tasks
+            task_description = task["Task"] #Accesses the task value inputted by the user from adding_tasks's dictionary.
             print(f"{current_index}. Task: {task_description}. Status: {status}.")
 
 
