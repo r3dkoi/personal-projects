@@ -24,13 +24,12 @@ def show_tasks(tasks):
     else:
         print("Your current tasks: ")
         for index, task in enumerate(tasks): #Shows index with the key pair values
-            if task[done]: 
-                print("Done")
+            if task["done"]:  #Takes the key done value from adding_tasks 
+                status = "Done"
             else:
-                print("Not done")
+                status = "Not done"
             current_index = index + 1 #increments index no. by 1 depending on range from n_tasks
             task_description = task #Takes the task value from adding_tasks
-            status = done #Takes the key done value from adding_tasks 
             print(f"{current_index}. Task: {task_description}. Status: {status}.")
 
 
