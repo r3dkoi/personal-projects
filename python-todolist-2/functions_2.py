@@ -49,5 +49,17 @@ def delete_tasks(tasks):
             except ValueError:
                 print("Please select a valid number from the task list.")
 
-
-        
+def marking_tasks(tasks):
+    print "==== MARKING TASKS ===="
+    if not tasks:
+        print("No tasks to mark as complete.")
+    else:
+        try:
+            marked_task = int("Choose the task number you wish to mark as complete: ")
+            if marked_task IN tasks:
+                marked_task_display =  tasks[marked_task]["Task"] #Accesses task list and the key Task that matches the user input index value is selected to be marked.
+                print (f"Task: {marked_task_display} is marked as complete. Well done!")
+            else:
+                print("Invalid task number.")
+        except ValueError:
+            print("Please select a valid number from the task list.")
