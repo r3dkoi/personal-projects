@@ -40,9 +40,9 @@ def delete_tasks(tasks):
             try:
                 task_deleted = int(input("Choose the task's number that you wish to delete: ")) - 1 #Adjusts for 0-based indexing
                 if 0 <= task_deleted and task_deleted < len(tasks): #Checks if the number the user inputted is in the index range of the task list
-                   deleted_task_display = tasks[task_deleted]["Task"] #Accesses task list and the created task is selected via the inputted index value
-                   print(f"The task: '{deleted_task_display}' has been deleted.")
-                   del tasks[task_deleted] #Removes specified index from the list
+                    deleted_task_display = tasks[task_deleted]["Task"] #Accesses task list and the created task is selected via the inputted index value
+                    print(f"The task: '{deleted_task_display}' has been deleted.")
+                    del tasks[task_deleted] #Removes specified index from the list
                    
                 else:
                     print("Invalid task number.")
@@ -50,16 +50,17 @@ def delete_tasks(tasks):
                 print("Please select a valid number from the task list.")
 
 def marking_tasks(tasks):
-    print "==== MARKING TASKS ===="
+    print ("==== MARKING TASKS ====")
     if not tasks:
         print("No tasks to mark as complete.")
     else:
-        try:
-            marked_task = int("Choose the task number you wish to mark as complete: ")
-            if marked_task IN tasks:
-                marked_task_display =  tasks[marked_task]["Task"] #Accesses task list and the key Task that matches the user input index value is selected to be marked.
-                print (f"Task: {marked_task_display} is marked as complete. Well done!")
-            else:
-                print("Invalid task number.")
-        except ValueError:
-            print("Please select a valid number from the task list.")
+            try:
+                marked_task = int(input("Choose the task number you wish to mark as complete: ")) - 1
+                if 0 <= marked_task and marked_task < len(tasks):
+                    marked_task_display =  tasks[marked_task]["Task"] #Accesses task list and the key Task that matches the user input index value is selected to be marked.
+                    print (f"Task: {marked_task_display} is marked as complete. Well done!")
+                    tasks[marked_task]["done"] =  True #Accesses the value at index position of marked_task and sets the key of "done" as True to trigger the change of "status" in the show_tasks
+                else:
+                    print("Invalid task number.")
+            except ValueError:
+                print("Please select a valid number from the task list.")

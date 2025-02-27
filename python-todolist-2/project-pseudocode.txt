@@ -87,9 +87,7 @@ DEFINE function as deleting_tasks with parameter (tasks) DO
                     ACCESS the tasks list and specify task_deleted is being selected, and the "Task" value being selected.
                     DELETE the task_deleted value from tasks list #Removes specified index from the list
                     PRINT "The task: deleted_task_display has been deleted."
-                
-                REMOVE the task from the list of tasks
-                PRINT f-string "Task: task_description will be deleted."
+        
                 END
             EXCEPT ValueError DO
                 PRINT "Please select a valid number from the task list."
@@ -102,8 +100,12 @@ DEFINE function as marking_tasks with parameter tasks
         TRY DO
             CREATE marked_task variable THEN
                 PROMPT user to input a integer "Choose the task number you wish to mark as complete: "
-        IF marked_task IN tasks DO
-            PRINT format string "Task: task_description is marked as complete. Well done."
+            IF marked_task is greater than 0 AND is less than tasks list DO
+                PRINT format string "Task: task_description is marked as complete. Well done."
+                ACCESS tasks list and select marked_task and the key "done" THEN
+                    SET as True
+            ELSE DO
+                PRINT "Invalid task number"
         EXCEPT ValueError DO
             PRINT "Please select a valid number from the task list."
 
