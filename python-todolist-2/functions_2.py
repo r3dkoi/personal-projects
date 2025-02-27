@@ -1,6 +1,8 @@
 """CORE Functions file for the to-do list
 """
 
+import sys
+
 def adding_tasks(tasks): #Will be altering the tasks variable
     print("==== ADDING TASKS ====")
     while True:
@@ -69,5 +71,6 @@ def exit_program():
     print(" ==== EXIT ====")
     print("Thank you for using this program!")
     print("See you later :)")
-    tasklist_loop = False 
+    sys.exit() #Terminates the program
+    
     
