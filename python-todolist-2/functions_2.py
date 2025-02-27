@@ -1,6 +1,6 @@
 """CORE Functions file for the to-do list
 """
-
+import main
 
 def adding_tasks(tasks): #Will be altering the tasks variable
     print("==== ADDING TASKS ====")
@@ -64,3 +64,10 @@ def marking_tasks(tasks):
                     print("Invalid task number.")
             except ValueError:
                 print("Please select a valid number from the task list.")
+
+def exit_program():
+    print(" ==== EXIT ====")
+    print("Thank you for using this program!")
+    print("See you later :)")
+    main.tasklist_loop_running = False 
+    
