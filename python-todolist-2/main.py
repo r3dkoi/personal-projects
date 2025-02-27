@@ -3,7 +3,7 @@ WELCOME!
 Student Name: Kyla Sofocado
 Student Number: 10346722
 """
-from functions_2 import adding_tasks, show_tasks, delete_tasks
+from functions_2 import adding_tasks, show_tasks, delete_tasks, marking_tasks, exit_program
 tasks = []  #Stores the task list
 
 def main():
@@ -11,8 +11,8 @@ def main():
     This function holds the main program and where the tasks will be stored.
     The main menu is found here.
     """
-
-    while True: #Program continues until user inputs a valid integer
+    global tasklist_loop_running #Created global variable so it can be edited in functions file
+    while tasklist_loop_running: #Program continues until user exits
         print ("==== TO DO LIST ====")
         print ("Welcome to the Main Menu")
         print("1. Add tasks")
@@ -30,9 +30,9 @@ def main():
             elif choice == 3:
                 delete_tasks(tasks)
             elif choice == 4:
-                marking_tests(tasks)
+                marking_tasks(tasks)
             elif choice == 5:
-                exit()
+                exit_program()
             else:
                 print("Please choose from the options above only. Thank you.")
         except ValueError:
