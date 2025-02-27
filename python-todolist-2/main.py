@@ -11,8 +11,8 @@ def main():
     This function holds the main program and where the tasks will be stored.
     The main menu is found here.
     """
-    global tasklist_loop_running #Created global variable so it can be edited in functions file
-    while tasklist_loop_running: #Program continues until user exits
+    
+    while True: #Program continues until user exits
         print ("==== TO DO LIST ====")
         print ("Welcome to the Main Menu")
         print("1. Add tasks")
