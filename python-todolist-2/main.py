@@ -4,7 +4,8 @@ Student Name: Kyla Sofocado
 Student Number: 10346722
 """
 from functions_2 import adding_tasks, show_tasks, delete_tasks, marking_tasks, exit_program
-tasks = []  #Stores the task list
+global tasks
+tasks = load_tasks_from_file()  #Loads tasks that have been saved previously
 
 def main():
     """
