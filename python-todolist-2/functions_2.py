@@ -74,8 +74,13 @@ def exit_program():
     sys.exit() #Terminates the program
 
 def save_tasks_to_file(tasks, filename="stored_data.json"):
-    with open(filename, "w") as file:
+    with open(filename, "w") as file: #Writes into json file
         json.dump(tasks, file, indent=4) #Data input from main will be written into stored_data.json 
                                         #indenting it by 4 makes it easier to read
 
-    
+def load_tasks_to_file(filename="stored_data.json"):
+    try:
+        with open(filename, "r") as file: #Reads json file only
+            json.load(file)
+    except FileNotFoundError: #If json.file is not detected
+        return []
