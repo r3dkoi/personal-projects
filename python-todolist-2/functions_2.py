@@ -81,6 +81,6 @@ def save_tasks_to_file(tasks, filename="stored_data.json"):
 def load_tasks_to_file(filename="stored_data.json"):
     try:
         with open(filename, "r") as file: #Reads json file only
-            json.load(file)
+            return json.load(file)
     except FileNotFoundError: #If json.file is not detected
         return []
