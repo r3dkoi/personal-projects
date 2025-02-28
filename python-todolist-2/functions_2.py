@@ -73,12 +73,12 @@ def exit_program():
     print("See you later :)")
     sys.exit() #Terminates the program
 
-def save_tasks_to_file(tasks, filename="stored_data.json"):
+def save_tasks_to_file(tasks, filename="C:\\Users\\sofoc\\repos\\personal-projects\\python-todolist-2\\stored_data.json"):
     with open(filename, "w") as file: #Writes into json file
         json.dump(tasks, file, indent=4) #Data input from main will be written into stored_data.json 
                                         #indenting it by 4 makes it easier to read
 
-def load_tasks_to_file(filename="stored_data.json"):
+def load_tasks_to_file(filename="C:\\Users\\sofoc\\repos\\personal-projects\\python-todolist-2\\stored_data.json"):
     try:
         with open(filename, "r") as file: #Reads json file only
             return json.load(file)
