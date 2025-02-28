@@ -2,6 +2,15 @@
 
 NAME json file as stored_data
 
+
+
+---- ADDING SOME TEST TASKS ----
+WRITE as JSON array []
+    for each task object DO
+    ADD "Task" key with task description #Takes key from main
+    Add "done" key with boolean value / completion status #Takes key from main
+CLOSE array
+
 ---- SAVE FUNCTION ----
 DEFINE function as save_tasks_to_file, parameters as tasks and filename stored_data.json
     OPEN filename in WRITE mode as file DO
