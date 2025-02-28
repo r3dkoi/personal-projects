@@ -83,4 +83,5 @@ def load_tasks_to_file(filename="stored_data.json"):
         with open(filename, "r") as file: #Reads json file only
             return json.load(file)
     except FileNotFoundError: #If json.file is not detected
+        print("File not found. Returning an empty list.")  # Debug print
         return []
