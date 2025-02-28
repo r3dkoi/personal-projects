@@ -1,7 +1,7 @@
 """CORE Functions file for the to-do list
 """
 
-import sys
+import sys, json
 
 def adding_tasks(tasks): #Will be altering the tasks variable
     print("==== ADDING TASKS ====")
@@ -72,5 +72,10 @@ def exit_program():
     print("Thank you for using this program!")
     print("See you later :)")
     sys.exit() #Terminates the program
-    
+
+def save_tasks_to_file(tasks, filename="stored_data.json"):
+    with open(filename, "w") as file:
+        json.dump(tasks, file, indent=4) #Data input from main will be written into stored_data.json 
+                                        #indenting it by 4 makes it easier to read
+
     
