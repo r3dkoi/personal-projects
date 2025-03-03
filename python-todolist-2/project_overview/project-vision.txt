@@ -56,6 +56,6 @@ See you later :).
 
 
 
-STEP 1. Begin with Core Program 
-STEP 2. Integrate data
+STEP 1. Begin with Core Program [Done]
+STEP 2. Integrate data 
 STEP 3. File handling

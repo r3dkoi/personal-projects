@@ -44,4 +44,18 @@ Solution: Because I added the user input's tasks into a dictionary, in order to 
                 Hence why I needed to do task["Task"]
 
 14. Made an infinite loop when trying to test out the delete function
-Solution: Removed the while loop and did a if-in statement instead. 
+Solution: Removed the while loop and did a if-in statement instead.
+
+15. Didn't know how to actually stop the program when making the exit function
+Solution: Researched the global keyword. This will allow me to modify the global variable from within a function! Meaning I can end while loop in my main file from within my function files.
+                Ran into an ImportError
+                Removed import Main from the functions file instead as it made a circular import issue.
+                ImportError was fixed but program still didn't terminate 
+                Researched sys module and sys.exit() terminates the program
+
+16. File Not Found:
+Problem: The JSON file (stored_data.json) could not be found, resulting in an empty list being returned.
+Solution: Specified the full path to the JSON file in both the main script and the functions file to ensure the program can locate and load the file correctly.
+
+17. Tasks weren't being loaded correctly from JSON file
+Soluton: Added debug print statements to check if the file was being read properly and if tasks were loaded correctly.

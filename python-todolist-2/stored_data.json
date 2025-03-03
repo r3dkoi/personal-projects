@@ -1,0 +1,18 @@
+[
+    {
+        "Task": "Cry for like five minutes",
+        "done": false
+    },
+    {
+        "Task": "Write some code at some point",
+        "done": true
+    },
+    {
+        "Task": "Sleep for 8 years",
+        "done": false
+    },
+    {
+        "Task": "Watch youtube",
+        "done": false
+    }
+]
