@@ -98,8 +98,14 @@ def load_tasks_to_file(filename="C:\\Users\\sofoc\\repos\\personal-projects\\pyt
         return []
 
 def go_back():
-    choice = input("Did you accidentally press this option and wish to go back? If yes, select Y. If not, press N: ").lower() #Made it case-insensitive
-    if choice == "y":
-        return True
-    else:
-        return False
+    while True:
+        choice = input("Did you accidentally press this option and wish to go back? If yes, select Y. If not, press N: ").lower() #Made it case-insensitive
+        if choice.isalpha(): # Check if the input is a string
+            if choice == "y":
+                return True
+            elif choice == "n":
+                return False
+            else:
+                print("Please enter a valid option (Y/N).")
+        else:
+            print("Invalid input. Please enter a valid option (Y/N).")
