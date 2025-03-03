@@ -77,4 +77,22 @@ def exit_program():
     print("See you later :)")
     sys.exit() #Terminates the program
     
-    
+def save_tasks_to_file(tasks, filename="C:\\Users\\sofoc\\repos\\personal-projects\\python-todolist-2\\stored_data.json"):
+    with open(filename, "w") as file: #Writes into json file
+        json.dump(tasks, file, indent=4) #Data input from main will be written into stored_data.json 
+                                        #indenting it by 4 makes it easier to read
+
+def load_tasks_to_file(filename="C:\\Users\\sofoc\\repos\\personal-projects\\python-todolist-2\\stored_data.json"):
+    try:
+        with open(filename, "r") as file: #Reads json file only
+            return json.load(file)
+    except FileNotFoundError: #If json.file is not detected
+        print("File not found. Returning an empty list.")  # Debug print
+        return []
+
+def go_back():
+    choice = input("Did you accidentally press this option and wish to go back? If yes, select Y. If not, press N.").lower()
+    if choice == "y":
+        return True
+    else:
+        return False
