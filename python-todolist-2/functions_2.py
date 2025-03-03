@@ -10,7 +10,10 @@ def adding_tasks(tasks): #Will be altering the tasks variable
     while True:
         try:
             n_tasks = int(input("How many tasks would you like to add: "))
-            break #Ends while loop and disregards except block
+            if n_tasks <= 10:
+                break #Ends while loop and disregards except block
+            else:
+                print("Sorry, I can only let you add up to 10 tasks and no more. Thanks for understanding!")
         except ValueError:
             print("Please enter a valid number.")
     for i in range(n_tasks): #Creates task list that ends on amount user had inputted
