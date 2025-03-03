@@ -3,8 +3,9 @@ WELCOME!
 Student Name: Kyla Sofocado
 Student Number: 10346722
 """
-from functions_2 import adding_tasks, show_tasks, delete_tasks, marking_tasks, exit_program
-tasks = []  #Stores the task list
+from functions_2 import adding_tasks, show_tasks, delete_tasks, marking_tasks, exit_program, load_tasks_to_file
+global tasks
+tasks = load_tasks_to_file("C:\\Users\\sofoc\\repos\\personal-projects\\python-todolist-2\\stored_data.json")  #Loads tasks that have been saved previously
 
 def main():
     """

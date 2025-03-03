@@ -1,7 +1,7 @@
 """CORE Functions file for the to-do list
 """
 
-import sys
+import sys, json
 
 def adding_tasks(tasks): #Will be altering the tasks variable
     print("==== ADDING TASKS ====")
@@ -19,6 +19,7 @@ def adding_tasks(tasks): #Will be altering the tasks variable
             "Task": task,
             "done": False
         }) #Status is set to false initially.
+    save_tasks_to_file(tasks) #Saves data and writes it into json.file
 
 def show_tasks(tasks):
     print("==== SHOW TASKS ====")
@@ -46,7 +47,7 @@ def delete_tasks(tasks):
                     deleted_task_display = tasks[task_deleted]["Task"] #Accesses task list and the created task is selected via the inputted index value
                     print(f"The task: '{deleted_task_display}' has been deleted.")
                     del tasks[task_deleted] #Removes specified index from the list
-                   
+                    save_tasks_to_file(tasks)
                 else:
                     print("Invalid task number.")
             except ValueError:
@@ -63,6 +64,7 @@ def marking_tasks(tasks):
                     marked_task_display =  tasks[marked_task]["Task"] #Accesses task list and the key Task that matches the user input index value is selected to be marked.
                     print (f"Task: {marked_task_display} is marked as complete. Well done!")
                     tasks[marked_task]["done"] =  True #Accesses the value at index position of marked_task and sets the key of "done" as True to trigger the change of "status" in the show_tasks
+                    save_tasks_to_file(tasks)
                 else:
                     print("Invalid task number.")
             except ValueError:
@@ -75,10 +77,4 @@ def exit_program():
     print("See you later :)")
     sys.exit() #Terminates the program
     
-def go_back():
-    choice = input("Did you accidentally press this option and wish to go back? If yes, select Y. If not, press N.").lower()
-    if choice == "y":
-        return True
-    else:
-        return False
     
