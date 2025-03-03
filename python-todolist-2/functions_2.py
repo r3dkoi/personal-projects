@@ -5,6 +5,8 @@ import sys
 
 def adding_tasks(tasks): #Will be altering the tasks variable
     print("==== ADDING TASKS ====")
+    if go_back():
+        return #Exits the function and returns to main menu
     while True:
         try:
             n_tasks = int(input("How many tasks would you like to add: "))
@@ -73,4 +75,10 @@ def exit_program():
     print("See you later :)")
     sys.exit() #Terminates the program
     
+def go_back():
+    choice = input("Did you accidentally press this option and wish to go back? If yes, select Y. If not, press N.").lower()
+    if choice == "y":
+        return True
+    else:
+        return False
     
