@@ -52,12 +52,6 @@ Importing the JSON module which ensures that tasks are saved after the adding ta
 
 Loading tasks from the JSON module always begins when the program is first booted up.
 
-I chose JSON over .txt file and .csv because JSON uses key-value pairs which my to-do list requires. Has good future-proofing if I wish to add more functionalities such as due dates and prorities, due to it's ability to store structured data. Also easier to format to read.    
-    
-.txt is too unorganised for my program's purpose, only suitable for simple lists and notes without any built-in data organisation.
-    
-.csv is used for tabular and spreadsheet data which my to-do list does not need (If I decide to add a finance tracker, then perhaps.)
-
 5. **Error Handling:**
 
 *If-Else statements:*
@@ -70,7 +64,7 @@ I chose JSON over .txt file and .csv because JSON uses key-value pairs which my 
 Used to redirect the user back to the original prompt but only if they inputted the incorrect value\
  E.g They inputted a string in the section that asks for how many tasks they wish to add or which task they wish to delete.
     
-6. Utility Functions
+6. **Utility Functions**
 
 *Going back to the Main Menu:*
 If the user accidentally inputs the wrong option or they changed their mind, they are met with the option to return to the previous menu -- this is the only other time they are allowed to use strings.\
@@ -93,14 +87,16 @@ To ensure the program only accepts strings in the go_back function, I made a che
 [ ] Add emojis (for fun)\
 [ ] Ability to share tasks to others\
 [ ] Add sound effects to buttons\
-[ ] Add subtasks to the original tasks 
+[ ] Add subtasks to the original tasks\
+[ ] Add a GUI
 
 ## REFLECTION ##
 
 This section will discuss the issues I've faced and how I approached solving each one.
 
 **1. Function Calling via Console**\
-*Challenge:* Initially struggled with calling functions through the console, specifically the main program.\
+*Challenge:* Initially struggled with calling functions through the console, specifically the main program.
+
 *Solution:* Did research on how to call it from using a Python website Bryan Weber. (2025). Defining Main Functions in Python – Real Python. https://realpython.com/python-main-function/
 
 **2. Improving User Interface**\
@@ -128,7 +124,7 @@ This section will discuss the issues I've faced and how I approached solving eac
 *Solution:* With help of Copilot AI, Perplexity AI, and Github Pilot; they reviewed and suggested adjustmented for code syntax, dictionary access methods, and restructured loop logic
 
 *Source:* Microsoft. (2023). Copilot (2023 version) [Large language model]. https://www.microsoft.com/copilot\
-Anthropic, 2023, Claude, [No specific version number available], Large Language Model, https://www.perplexity.ai/
+Anthropic, 2023, Claude, [No specific version number available], Large Language Model, https://www.perplexity.ai/\
 GitHub. (2023). GitHub Copilot. Version 1. Large Language Model. https://github.com/features/copilot
 
 **6. Program Termination**\
@@ -147,9 +143,42 @@ Python sys Module. (2023, November 18). GeeksforGeeks. https://www.geeksforgeeks
 *Source:* w3Schools. (n.d.). Python global Keyword. Retrieved 7 March 2025, from https://www.w3schools.com/python/ref_keyword_global.asp\
 
 ## Rationale for Design Decisions ##
+<table>
+    <tr>
+    <th>Modular Structure<th>
+        <td>Separating functions into different files improved code readability and maintainability.</td>
+    </tr>
+</table>
+<br>
+</br>
 
+<table>
+    <tr>
+    <th>JSON for Data Storage</th>
+        <td>I chose JSON over .txt file and .csv because JSON uses key-value pairs which my to-do list requires. Has good future-proofing if I wish to add more functionalities such as due dates and prorities, due to it's ability to store structured data. Also easier to format to read.</td>
+        <td>.txt is too unorganised for my program's purpose, only suitable for simple lists and notes without any built-in data organisation. </td>
+        <td> .csv is used for tabular and spreadsheet data which my to-do list does not need (If I decide to add a finance tracker, then perhaps.)</td>
+    </tr>
+</table>
 
+<br>
+</br>
 
+<table>
+    <tr>
+    <th>Error Handling</th>
+        <td> Implemented robust error handling to ensure smooth user experience and program stability</td>
+    </tr>
+</table>
+<br>
+</br>
+<table>
+    <tr>
+    <th>Use of Dictionary and Lists</th>
+        <td>Used dictionaries for tasks to easily manage multiple attributes (description, completion status) per task.</td>
+        <td>Did not use sets because they don't allow duplicates and don't support key-value pairs.</td>
+        <td>Used list to store all the values inputted; easily modified and allows duplicates.</td>
+        <td>Did not use Tuples because it's fixed data and are immutable.</td>
 
 
 
