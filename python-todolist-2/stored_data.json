@@ -1,18 +1,26 @@
 [
     {
-        "Task": "Cry for like five minutes",
-        "done": false
-    },
-    {
-        "Task": "Write some code at some point",
-        "done": true
-    },
-    {
         "Task": "Sleep for 8 years",
         "done": false
     },
     {
         "Task": "Watch youtube",
         "done": false
+    },
+    {
+        "Task": "Play Kingdom Come Deliverance 2",
+        "done": true
+    },
+    {
+        "Task": "Eat 28340834",
+        "done": true
+    },
+    {
+        "Task": "Eat",
+        "done": false
+    },
+    {
+        "Task": "Sleep 23488502358",
+        "done": true
     }
 ]

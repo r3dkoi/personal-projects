@@ -43,7 +43,7 @@ def delete_tasks(tasks):
     print("==== DELETE TASKS ====")
     if go_back():
         return
-    elif not tasks: 
+    elif not tasks: #
         print("No tasks to delete.")
     else:
             try:
