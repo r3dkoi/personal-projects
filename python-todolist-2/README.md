@@ -16,15 +16,19 @@ It's current features include:\
     - Exiting the program
 
 
-## Program Structure & Logic [A Flow-chart is provided in the Project_overview folder, named Todolist.drawio.png] ##
+## Program Structure & Logic ##
+
+![Flowchart of To-Do List](./project_overview/Todolist_Flowchart.drawio.png)
 
     Programming language used: Python
 
 ### Main Components ###
-1. **Main Menu**\
+1. **Main Menu**
+
 Where the program begins, and the user is prompted to begin the main loop of the program
 
-2. **Task Management**\
+2. **Task Management**
+
 *Task Storage:* Tasks are loaded from a JSON file and/or saved.\
 *Task Operations:* Run from main functions file:
 - Adding tasks
@@ -36,8 +40,10 @@ Where the program begins, and the user is prompted to begin the main loop of the
 - Loading tasks from JSON file to program
 - Returning to Main menu 
 
-3. **User interface**\
-*Input handling:* User commands, often in form of integers to progress through the program. Only strings are allowed for task descriptions.\
+3. **User interface**
+
+*Input handling:* User commands, often in form of integers to progress through the program. Only strings are allowed for task descriptions.
+
 *Output display:*  Through the showing tasks option (Option 2), which should show the current list of tasks to the user in a ordered and numbered list (Ascending-Descending).
 
 4. **Data Persistence**
@@ -52,31 +58,32 @@ I chose JSON over .txt file and .csv because JSON uses key-value pairs which my 
     
 .csv is used for tabular and spreadsheet data which my to-do list does not need (If I decide to add a finance tracker, then perhaps.)
 
-5. **Error Handling:**\ 
+5. **Error Handling:**
+
 *If-Else statements:*
- Used to redirect the user back to the original prompt (E.g the main menu or the option's input prompt) after telling them that their current input doesn't meet the right conditions. \
+ Used to redirect the user back to the original prompt (E.g the main menu or the option's input prompt) after telling them that their current input doesn't meet the right conditions.\
  E.g if they inputted the number 6 in the main menu despite only having 5 options, as shown in the flowchart, they get redirected\
+
  E.g If they inputted more than the number 10 in the adding tasks function, as shown in the flwochart, a message is displayed prompting them to change their answer and is redirected.
 
-
-
-        Try-except statements: 
-            Used to redirect the user back to the original prompt but only if they inputted the incorrect value
-                E.g They inputted a string in the section that asks for how many tasks they wish to add or which task they wish to delete.
+*Try-except statements:*
+Used to redirect the user back to the original prompt but only if they inputted the incorrect value\
+ E.g They inputted a string in the section that asks for how many tasks they wish to add or which task they wish to delete.
     
-    6. Utility Functions
-        Going back to the Main Menu: 
-            If the user accidentally inputs the wrong option or they changed their mind, they are met with the option to return to the previous menu -- this is the only other time they are allowed to use strings.
-                e.g the go_back function
+6. Utility Functions
+
+*Going back to the Main Menu:*
+If the user accidentally inputs the wrong option or they changed their mind, they are met with the option to return to the previous menu -- this is the only other time they are allowed to use strings.\
+ e.g the go_back function
         
-        Making strings case-insensitive: 
-            Just for user friendliness and to prevent potential program errors.
-                e.g Used only in the go_back function to ensure that the function will still execute even if the user inputs a lowercase 'y', rather than a uppercase 'Y'.
+*Making strings case-insensitive:*
+Just for user friendliness and to prevent potential program errors.\
+e.g Used only in the go_back function to ensure that the function will still execute even if the user inputs a lowercase 'y', rather than a uppercase 'Y'.
 
-        Checking if input is a string: 
-            To ensure the program only accepts strings in the go_back function, I made a check (.isalpha) before it can execute. I didn't add this for task descriptions because users might want to use numbers in their tasks.
+*Checking if input is a string:*
+To ensure the program only accepts strings in the go_back function, I made a check (.isalpha) before it can execute. I didn't add this for task descriptions because users might want to use numbers in their tasks.
 
-## FUTURE EXTENSIONS
+## FUTURE EXTENSIONS ##
 
 
 
