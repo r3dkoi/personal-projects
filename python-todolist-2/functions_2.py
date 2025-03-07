@@ -19,9 +19,9 @@ def adding_tasks(tasks): #Will be altering the tasks variable
     for i in range(n_tasks): #Creates task list that ends on amount user had inputted
         task = input("Please enter task description: ")
         tasks.append({
-            "Task": task,
+            "Task": task, 
             "done": False
-        }) #Status is set to false initially.
+        }) #Adding user inputted task to the task list. Status is set to false initially. 
     save_tasks_to_file(tasks) #Saves data and writes it into json.file
 
 def show_tasks(tasks):
@@ -51,7 +51,7 @@ def delete_tasks(tasks):
                 if 0 <= task_deleted and task_deleted < len(tasks): #Checks if the number the user inputted is in the index range of the task list
                     deleted_task_display = tasks[task_deleted]["Task"] #Accesses task list and the created task is selected via the inputted index value
                     print(f"The task: '{deleted_task_display}' has been deleted.")
-                    del tasks[task_deleted] #Removes specified index from the list
+                    del tasks[task_deleted] #Removes task at the specified index from the list
                     save_tasks_to_file(tasks)
                 else:
                     print("Invalid task number.")
