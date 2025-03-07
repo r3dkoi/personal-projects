@@ -85,6 +85,28 @@ To ensure the program only accepts strings in the go_back function, I made a che
 
 ## FUTURE EXTENSIONS ##
 
+[ ] Add reminders to do tasks - push notifications\
+[ ] Add priorities to each task\
+[ ] Add end dates to each task\
+[ ] Add Calendar section\
+[ ] Add finance tracker section\
+[ ] Add emojis (for fun)\
+[ ] Ability to share tasks to others\
+[ ] Add sound effects to buttons\
+[ ] Add subtasks to the original tasks 
+
+## REFLECTION ##
+
+This section will discuss the issues I've faced and how I approached solving each one.
+
+**1. Function Calling via Console**\
+*Challenge:* Initially struggled with calling functions through the console, specifically the main program.\
+*Solution:* Did research on how to call it from using a Python website Bryan Weber. (2025). Defining Main Functions in Python – Real Python. https://realpython.com/python-main-function/
+
+**2. Improving User Interface**\
+*Challenge:* Wanting to state which task was deleted when selected
+*Solution:* Learned about list accessing and key-value pairs. Storing the action within a variable (e.g the deleted_task_display)
+
 
 
 
