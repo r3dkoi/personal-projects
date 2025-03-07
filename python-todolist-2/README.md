@@ -105,7 +105,51 @@ This section will discuss the issues I've faced and how I approached solving eac
 
 **2. Improving User Interface**\
 *Challenge:* Wanting to state which task was deleted when selected
+
 *Solution:* Learned about list accessing and key-value pairs. Storing the action within a variable (e.g the deleted_task_display)
+
+*Source:* w3Schools. (n.d.). Python—Access List Items. Retrieved 7 March 2025, from https://www.w3schools.com/python/python_lists_access.asp
+
+**3.Error Handling for User Input**\
+*Challenge:* Program crashed when non-integer input was provided for task selection.
+
+*Solution:* Implemented try-except blocks to handle incorrect input types
+
+*Source:* w3Schools. (n.d.). Python Try Except. Retrieved 7 March 2025, from https://www.w3schools.com/python/python_try_except.asp
+
+**4. Code Organisation**\
+*Challenge:* Main file became cluttered with multiple functions
+
+*Solution:* Created separate function file for neater main file and better organisation of functions
+
+**5. Syntax and Logic Errors**\
+*Challenge:* Various issues including value errors, type errors, and infinite loops.
+
+*Solution:* With help of Copilot AI, Perplexity AI, and Github Pilot; they reviewed and suggested adjustmented for code syntax, dictionary access methods, and restructured loop logic
+
+*Source:* Microsoft. (2023). Copilot (2023 version) [Large language model]. https://www.microsoft.com/copilot\
+Anthropic, 2023, Claude, [No specific version number available], Large Language Model, https://www.perplexity.ai/
+GitHub. (2023). GitHub Copilot. Version 1. Large Language Model. https://github.com/features/copilot
+
+**6. Program Termination**\
+*Challenge:* Unsure of how to properly exit the program, and even if I broke the while loop using break it was not clean and professional-looking as it was abrupt.
+
+*Solution:* Researched about sys module for sys.exit() function 
+
+*Source:* 
+Python sys Module. (2023, November 18). GeeksforGeeks. https://www.geeksforgeeks.org/python-sys-module/
+
+**7. File Handling Intergration.**\
+*Challenge:* Issues with finding and loading data from JSON files
+
+*Solution:* Utilised global keyword tasks so it can be affected by saving and loading functions. Specified full file paths and added print debug statements to check which code is being read and which is being not. 
+
+*Source:* w3Schools. (n.d.). Python global Keyword. Retrieved 7 March 2025, from https://www.w3schools.com/python/ref_keyword_global.asp\
+
+## Rationale for Design Decisions ##
+
+
+
 
 
 
