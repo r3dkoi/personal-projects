@@ -1,0 +1,25 @@
+-- USER INPUT SECTION --
+1. Make a WHILE loop so it keeps prompting the user to keep adding numbers
+2. Make a IF loop to keep making variables to store the number the user inputs
+  since they need to be used as parameters 
+
+
+2. Add an IF-ELIF-ELSE statement so it gives them the option to stop inputting numbers
+3. Once they stop inputting numbers, the options to do mathematical formulae can be done
+
+
+USER INPUT
+WHILE condition is TRUE do 
+    CHOICE variable stores input as a integer and prompts user with "Input a number."
+    CHOICE_2 variable
+
+
+WHILE true:
+choice = int(input("Input a number."))
+choice_2 = int(input("Input another number.))
+
+
+1. Addition
+Taking two numbers and adding them together
+
+DEFINE function as addition with 
