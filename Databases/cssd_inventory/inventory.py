@@ -27,4 +27,7 @@ cursor.execute("""
 );
                """)
 conn.commit()
-conn.close()  # Always close your connection when done
+conn.close()  # closes my  connection when done
+
+
+
