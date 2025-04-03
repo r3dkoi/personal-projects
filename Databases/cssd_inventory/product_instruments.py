@@ -14,17 +14,11 @@ cursor = conn.cursor()
 #Don't forget to add the foreign keys to the inventory table once the Product and Location tables are created
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)
-# FOREIGN KEY (SupplierID) REFERENCES Supplers(SupplierID)    
+# FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID) in instruments inventory table
 cursor.execute("""
-             CREATE TABLE `Instrument Inventory` (
-                ProductID int AUTO_INCREMENT PRIMARY KEY,
-                Name_and_Description varchar(255),
-                Category varchar(255),
-                Cost int,
-                SupplierID int,
-                SKU int,
-                Sterilisation_Method varchar(255)
-             );
+             ALTER TABLE `Instrument Inventory` 
+                ADD FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID);
+            
              """)
 conn.commit()
 conn.close()  # closes my  connection when done
