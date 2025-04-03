@@ -16,15 +16,9 @@ cursor = conn.cursor()
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
 cursor.execute("""
-             CREATE TABLE `inventory` (
-            InventoryID int AUTO_INCREMENT PRIMARY KEY,
-            ProductID int,
-            LocationID int,
-            QuantityAvailable int,
-            MinimumStockLevel int,
-            LastRestockDate datetime,
-            ExpiryDate date
-);
+             ALTER TABLE `inventory`
+               ADD FOREIGN KEY (ProductID) REFERENCES `instrument inventory`(ProductID),
+               ADD FOREIGN KEY (LocationID) REFERENCES `storage_locations`(LocationID);
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
