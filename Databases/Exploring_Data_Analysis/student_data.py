@@ -6,6 +6,7 @@ if there is a relationship between the amount of studying a student undertakes a
 The professor might use the data to test a hypothesis that only students who study for a minimum number of hours can 
 expect to achieve a passing grade."""
 
+import pandas as pd 
 import numpy as np
 
 grades_data = [50,50,47,97,49,3,53,42,26,74,82,62,37,15,70,27,36,35,48,52,63,64]
@@ -30,4 +31,14 @@ print(f"The first element of the first element is: {student_data[0][0]}")
 avg_study = student_data[0].mean() #The first array
 avg_grade = student_data[1].mean() #The second array
 
-print('Average study hours: {:.2f}\nAverage grade:{:.2f}'.format(avg_study, avg_grade))
+print('Average study hours: {:.2f}\nAverage grade: {:.2f}'.format(avg_study, avg_grade))
+
+#Pandas DataFrame Section
+
+df_students = pd.DataFrame({'Name': ['Dan', 'Joann', 'Pedro', 'Rosie', 'Ethan', 'Vicky', 'Frederic', 'Jimmie', 
+                                     'Rhonda', 'Giovanni', 'Francesca', 'Rajab', 'Naiyana', 'Kian', 'Jenny',
+                                     'Jakeem','Helena','Ismat','Anila','Skye','Daniel','Aisha'],
+                            'StudyHours':student_data[0],
+                            'Grade':student_data[1]})
+
+
