@@ -23,5 +23,11 @@ student_data = np.array([study_hours, grades])
 #Show shape of 2D array
 print(f"The shape of the 2D array is: {student_data.shape}")
 
+#Show first element of the first element
+print(f"The first element of the first element is: {student_data[0][0]}")
 
+#Get the mean value of each sub-array
+avg_study = student_data[0].mean() #The first array
+avg_grade = student_data[1].mean() #The second array
 
+print('Average study hours: {:.2f}\nAverage grade:{:.2f}'.format(avg_study, avg_grade))
