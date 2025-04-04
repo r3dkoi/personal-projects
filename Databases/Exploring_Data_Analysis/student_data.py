@@ -41,6 +41,16 @@ df_students = pd.DataFrame({'Name': ['Dan', 'Joann', 'Pedro', 'Rosie', 'Ethan', 
                             'StudyHours':student_data[0],
                             'Grade':student_data[1]})
 
-print(df_students)
+print(f"\n{df_students}")
+
+#Finding and filtering data in a DataFrame
+#Get the data for index value 5
+print("\n")
+print(df_students.loc[5])
+
+#Get the data for the first 5 students
+print("\n")
+print(df_students.iloc[:5])
+
 
 
