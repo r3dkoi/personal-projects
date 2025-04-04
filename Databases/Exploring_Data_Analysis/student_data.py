@@ -41,4 +41,6 @@ df_students = pd.DataFrame({'Name': ['Dan', 'Joann', 'Pedro', 'Rosie', 'Ethan', 
                             'StudyHours':student_data[0],
                             'Grade':student_data[1]})
 
+print(df_students)
+
 
