@@ -16,18 +16,10 @@ cursor = conn.cursor()
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
 cursor.execute("""
-               ALTER TABLE `inventory` 
-               ADD FOREIGN KEY (LocationID) REFERENCES `storage_locations`(LocationID);
+               INSERT INTO `inventory` (MinimumStockLevel, QuantityAvailable, LastRestockDate)
+               VALUES (70, 150, 2025-03-06)
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
-
-""" 
-VALUES (482038, 70, 9295860c, 150, 2025-03-06)
-VALUES (485285, 5,  2ec486fc, 10, 2025-03-21)
-               VALUES (485285, 100, 632ab1dc, 200, 2025-03-21)
-               VALUES (307331, 15, 2ec486fc, 25, 2025-02-19)
-               VALUES (307331, 0,  9295860c, 8, 2025-02-19)
-               VALUES (236314, 44, 632ab1dc, 120, 2025-03-16)"""
 
 
