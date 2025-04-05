@@ -16,9 +16,8 @@ cursor = conn.cursor()
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
 cursor.execute("""
-             ALTER TABLE `inventory`
-               ADD FOREIGN KEY (ProductID) REFERENCES `instrument inventory`(ProductID),
-               ADD FOREIGN KEY (LocationID) REFERENCES `storage_locations`(LocationID);
+               ALTER TABLE inventory MODIFY COLUMN MinimumStockLevel INT
+               AFTER ProductID;
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
