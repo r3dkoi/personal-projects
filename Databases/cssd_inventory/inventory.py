@@ -16,8 +16,8 @@ cursor = conn.cursor()
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
 cursor.execute("""
-               ALTER TABLE inventory MODIFY COLUMN MinimumStockLevel INT
-               AFTER ProductID;
+               ALTER TABLE `inventory` 
+               DROP COLUMN `ExpiryDate`
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
