@@ -17,8 +17,8 @@ cursor = conn.cursor()
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
 cursor.execute("""
                ALTER TABLE `inventory` 
-               ALGORITHM=INPLACE,
-               CHANGE `LocationID` `StorageLocation` VARCHAR(255);
+               DROP FOREIGN KEY `inventory_ibfk_2`,
+               DROP COLUMN `LocationID`;
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
