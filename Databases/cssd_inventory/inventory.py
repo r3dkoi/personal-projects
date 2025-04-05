@@ -16,8 +16,8 @@ cursor = conn.cursor()
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
 cursor.execute("""
-              ALTER TABLE `inventory` MODIFY COLUMN `StorageLocation` VARCHAR(255)
-               AFTER `ProductID`
+               ALTER TABLE `inventory` 
+               ADD FOREIGN KEY (LocationID) REFERENCES `storage_locations`(LocationID);
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
