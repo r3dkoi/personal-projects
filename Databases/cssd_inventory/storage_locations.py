@@ -16,13 +16,12 @@ cursor = conn.cursor()
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)
 # FOREIGN KEY (SupplierID) REFERENCES Supplers(SupplierID)    
 cursor.execute("""
-             CREATE TABLE `storage_locations` (
-                LocationID int AUTO_INCREMENT PRIMARY KEY,
-                Location_Name varchar(255),
-                Department varchar(255),
-                Department_Contact_Information varchar(255)
-             );
-             """)
+             INSERT INTO `storage_locations` (`LocationID`, `Location_Name`, `Department`, `Department_Contact_Information`, `Opening Hours`)
+             VALUES
+                (2459273000, "Central Sterile Stores", "Sterile Services", 6345, "24/7"),
+                (1663742000, "Cardiac Catheterisation Laboratory", "CCL", 9961, "0800-1800"),
+                (784631548, "Consumables Store", "Main Theatres", 4591, "0600-2100");
+               """)
 conn.commit()
 conn.close()  # closes my  connection when done
 
