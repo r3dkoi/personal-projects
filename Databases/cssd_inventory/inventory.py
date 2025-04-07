@@ -10,6 +10,12 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor() 
 
+# Adding a new column to the Inventory Table
+cursor.execute("""
+               ALTER TABLE `inventory`
+               ADD COLUMN ProductName VARCHAR(255) AFTER MinimumStockLevel
+               """)
+
 # Creating Inventory Table 
 
 #Don't forget to add the foreign keys to the table once the Product and Location tables are created
