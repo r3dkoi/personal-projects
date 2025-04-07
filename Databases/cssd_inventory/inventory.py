@@ -10,22 +10,27 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor() 
 
-# Adding a new column to the Inventory Table
-cursor.execute("""
-               ALTER TABLE `inventory`
-               ADD COLUMN ProductName VARCHAR(255) AFTER MinimumStockLevel
-               """)
-
-# Creating Inventory Table 
-
 #Don't forget to add the foreign keys to the table once the Product and Location tables are created
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
-cursor.execute("""
-               INSERT INTO `inventory` (MinimumStockLevel, QuantityAvailable, LastRestockDate)
-               VALUES (44, 120, '2025-03-16')
-               """)
-conn.commit()
-conn.close()  # closes my  connection when done
+
+# Update ProductID for different inventory items
+updates = [
+    (485285, 3),
+    (485285, 4),
+    (307331, 5),
+    (307331, 6),
+    (236314, 7)
+]
+
+for product_id, inventory_id in updates:
+    cursor.execute("""
+        UPDATE `inventory`
+        SET `ProductID` = %s
+        WHERE `InventoryID` = %s
+    """, (product_id, inventory_id))
+    conn.commit()
+
+conn.close()  # closes my connection when done
 
 

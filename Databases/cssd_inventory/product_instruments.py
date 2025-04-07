@@ -9,7 +9,7 @@ conn = mysql.connector.connect(
 ) 
 cursor = conn.cursor() 
 
-# Creating Product_Inventory Table 
+
 
 #Don't forget to add the foreign keys to the inventory table once the Product and Location tables are created
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
