@@ -16,8 +16,7 @@ cursor = conn.cursor()
 # FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
 # FOREIGN KEY (LocationID) REFERENCES Locations(LocationID)    
 cursor.execute("""
-               INSERT INTO `inventory` (MinimumStockLevel, QuantityAvailable, LastRestockDate)
-               VALUES (70, 150, 2025-03-06)
+               ALTER TABLE `inventory` MODIFY Column `LastRestockDate` DATE;
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
