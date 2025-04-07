@@ -17,7 +17,7 @@ cursor = conn.cursor()
 # FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID) in instruments inventory table
 cursor.execute("""
              ALTER TABLE `Instrument Inventory` 
-                ADD FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID);
+                ADD COLUMN `ShelfLife` TEXT AFTER `Class`;
             
              """)
 conn.commit()
