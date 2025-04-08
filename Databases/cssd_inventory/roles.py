@@ -11,9 +11,12 @@ conn = mysql.connector.connect(
 
 
 cursor = conn.cursor() 
-cursor.execute("""
-               
-               """)
+cursor.execute("""CREATE TABLE `roles`(
+               `RoleID` INT(11) PRIMARY KEY AUTO_INCREMENT,
+               `RoleName` VARCHAR(50) NOT NULL,
+               `Description` TEXT NOT NULL,
+               `ActiveStatus` BOOLEAN NOT NULL DEFAULT 1
+               )""")
 conn.commit()
 conn.close()  # closes my  connection when done
 
