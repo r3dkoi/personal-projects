@@ -12,8 +12,12 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor() 
 cursor.execute("""
-               ALTER TABLE `users`
-               ADD FOREIGN KEY (`RoleID`) REFERENCES `roles`(`RoleID`)
+               INSERT INTO `users`(`EmployeeID`, `RoleID`, `Password`, `FullName`, `Department`, `LastLogin`, `AccountStatus`)
+               VALUES
+               (314127, 3, "HorsePurpleHatRunBay", "Simon Sandler", "CSSD", "26-10-24 02:00:00", "Inactive"),
+               (19878, 1, "Mdwb@Shi1984", "Nick Maui", "CSSD", "26-10-24 02:00:00", "Active"),
+               (99102, 1, "Children+Xmas=Excitement", "Susie Wellbram", "CSSD", "25-01-25 03:00:05", "Active"),
+               (49201, 4, "IoaVW,wa52p", "Adam Sakier", "Supply Stores", "25-00-25 01:00:05", "Active")
                """)
 conn.commit()
 conn.close()  # closes my  connection when done
