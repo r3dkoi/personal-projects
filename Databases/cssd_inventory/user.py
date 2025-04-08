@@ -13,7 +13,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor() 
 cursor.execute("""
                UPDATE `users` 
-               SET `LastLogin` = "25-00-25 01:00:05"
+               SET `LastLogin` = "25-01-25 01:00:05"
                WHERE `UserID` = 4
                """)
 conn.commit()
