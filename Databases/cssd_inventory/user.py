@@ -15,9 +15,7 @@ cursor = conn.cursor()
 
 # List of users to create with their passwords
 users = [
-    ("314127", "HorsePurpleHatRunBay"),
-    ("19878", "Mdwb@Shi1984"),
-    ("49201", "IoaVW,wa52p")
+    ("99102", "Children+Xmas=Excitement")
 ]
 
 # Execute CREATE USER statements one at a time
