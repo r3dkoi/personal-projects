@@ -11,7 +11,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor() 
 
 #List of privileges to grant
-privileges = ['SELECT']
+privileges = ['SELECT, INSERT, UPDATE']
 
 #List of tables to grant privileges on
 tables = [
@@ -25,7 +25,7 @@ tables = [
 for table in tables: 
     for privilege in privileges:
         try:
-            grant_sql_privileges = f"GRANT {privilege} ON cssd_inventory.{table} TO '`Sterile Services Employee`'@'localhost'" 
+            grant_sql_privileges = f"GRANT {privilege} ON cssd_inventory.{table} TO '`Inventory Administrator`'@'localhost'" 
             cursor.execute(grant_sql_privileges)
             conn.commit()
             print(f"Successfully granted {privilege} on {table}")
