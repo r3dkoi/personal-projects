@@ -7,15 +7,25 @@ conn = mysql.connector.connect(
     password='', 
     database='cssd_inventory'  # must match the name you created in phpMyAdmin 
 ) 
-#Table for user roles
-#Granting privileges to the roles
-
 
 cursor = conn.cursor() 
-cursor.execute("""
-               GRANT SELECT, INSERT, UPDATE, DELETE;
-               """)
-conn.commit()
-conn.close()  # closes my  connection when done
+
+# Execute GRANT statements one at a time
+grants = [
+    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`instrument inventory` TO 'Sterile Services Manager'@'localhost'",
+    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`inventory` TO 'Sterile Services Manager'@'localhost'",
+    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`storage_locations` TO 'Sterile Services Manager'@'localhost'",
+    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`suppliers` TO 'Sterile Services Manager'@'localhost'"
+]
+
+for grant in grants:
+    try:
+        cursor.execute(grant)
+        conn.commit()
+    except mysql.connector.Error as err:
+        print(f"Error executing {grant}: {err}")
+
+cursor.close()
+conn.close()  # closes my connection when done
 
 
