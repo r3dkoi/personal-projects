@@ -9,24 +9,29 @@ conn = mysql.connector.connect(
 ) 
 
 cursor = conn.cursor() 
-#Creating Roles
-#Assigning privileges to roles
 
-# Execute GRANT statements one at a time
-create_role = [
-    "CREATE ROLE 'Sterile Services Manager'",
-    "CREATE ROLE 'Sterile Services Team Leader'",
-    "CREATE ROLE 'Sterile Services Employee'",
-    "CREATE ROLE 'Inventory Administrator'"
+#List of privileges to grant
+privileges = ['SELECT', 'UPDATE', ]
+
+#List of tables to grant privileges on
+tables = [
+    '`instrument inventory`',
+    '`inventory`',
+    '`storage_locations`',
+    '`suppliers`'
 ]
 
-for role in create_role:
-    try:
-        cursor.execute(role)
-        conn.commit()
-    except mysql.connector.Error as err:
-        print(f"Error executing {grant}: {err}")
-
+#Granting privileges to roles
+for table in tables: 
+    for privilege in privileges:
+        try:
+            grant_sql_privileges = f"GRANT {privilege} ON cssd_inventory.{table} TO '`Sterile Services Team Leader`'@'localhost'" 
+            cursor.execute(grant_sql_privileges)
+            conn.commit()
+            print(f"Successfully granted {privilege} on {table}")
+        except mysql.connector.Error as err:
+            print(f"Error granting {privilege} on {table}: {err}")
+        
 cursor.close()
 conn.close()  # closes my connection when done
 
