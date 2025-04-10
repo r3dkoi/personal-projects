@@ -9,20 +9,20 @@ conn = mysql.connector.connect(
 ) 
 
 cursor = conn.cursor() 
+#Creating Roles
+#Assigning privileges to roles
 
 # Execute GRANT statements one at a time
-grants = [
-    "REVOKE SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`inventory` TO `Inventory Administrator`",
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`instrument inventory` TO `Inventory Administrator`",
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`storage_locations` TO `Inventory Administrator`",
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`suppliers` TO `Inventory Administrator`",
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`users` TO `Sterile Services Manager`"
-    
+create_role = [
+    "CREATE ROLE 'Sterile Services Manager'",
+    "CREATE ROLE 'Sterile Services Team Leader'",
+    "CREATE ROLE 'Sterile Services Employee'",
+    "CREATE ROLE 'Inventory Administrator'"
 ]
 
-for grant in grants:
+for role in create_role:
     try:
-        cursor.execute(grant)
+        cursor.execute(role)
         conn.commit()
     except mysql.connector.Error as err:
         print(f"Error executing {grant}: {err}")
