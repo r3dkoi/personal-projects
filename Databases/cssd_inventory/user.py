@@ -9,14 +9,27 @@ conn = mysql.connector.connect(
 ) 
 #Table for users
 #Don't forget to add foreign key to RoleID to reference RoleID in roles table
+#Creating user accounts for privileges
 
 cursor = conn.cursor() 
-cursor.execute("""
-               UPDATE `users` 
-               SET `LastLogin` = "25-01-25 01:00:05"
-               WHERE `UserID` = 4
-               """)
-conn.commit()
-conn.close()  # closes my  connection when done
+
+# List of users to create with their passwords
+users = [
+    ("314127", "HorsePurpleHatRunBay"),
+    ("19878", "Mdwb@Shi1984"),
+    ("49201", "IoaVW,wa52p")
+]
+
+# Execute CREATE USER statements one at a time
+for username, password in users:
+    try:
+        create_user_sql = f"CREATE USER '{username}'@'localhost' IDENTIFIED BY '{password}'"
+        cursor.execute(create_user_sql)
+        conn.commit()
+    except mysql.connector.Error as err:
+        print(f"Error creating user {username}: {err}")
+
+cursor.close()
+conn.close()  # closes my connection when done
 
 
