@@ -9,15 +9,20 @@ conn = mysql.connector.connect(
 ) 
 
 cursor = conn.cursor() 
+roles = [ 
+    'Sterile Services Manager',
+    'Sterile Services Team Leader',
+    'Sterile Services Employee',
+    'Inventory Administrator'
+]
 
-try:
-    # Grant SHOW VIEW privilege to the role
-    cursor.execute("GRANT SHOW VIEW ON cssd_inventory.* TO `Sterile Services Employee`@'localhost'")
-    conn.commit()
-    print("Successfully granted SHOW VIEW privilege")
-
-except mysql.connector.Error as err:
-    print(f"Error: {err}")
+for role in roles:
+    try:
+        cursor.execute(f"CREATE ROLE IF NOT EXISTS `{role}`")
+        conn.commit()
+        print(f"Successfully created role: {role}")
+    except mysql.connector.Error as err:
+        print(f"Error creating role: {err}")
 
 cursor.close()
 conn.close()  # closes my connection when done
