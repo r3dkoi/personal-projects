@@ -12,7 +12,7 @@ cursor = conn.cursor()
 
 # Execute GRANT statements one at a time
 grants = [
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`inventory` TO `Inventory Administrator`",
+    "REVOKE SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`inventory` TO `Inventory Administrator`",
     "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`instrument inventory` TO `Inventory Administrator`",
     "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`storage_locations` TO `Inventory Administrator`",
     "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`suppliers` TO `Inventory Administrator`",
