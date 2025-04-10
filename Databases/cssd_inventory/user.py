@@ -13,19 +13,8 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor() 
 
-# List of users to create with their passwords
-users = [
-    ("99102", "Children+Xmas=Excitement")
-]
-
-# Execute CREATE USER statements one at a time
-for username, password in users:
-    try:
-        create_user_sql = f"CREATE USER '{username}'@'localhost' IDENTIFIED BY '{password}'"
-        cursor.execute(create_user_sql)
-        conn.commit()
-    except mysql.connector.Error as err:
-        print(f"Error creating user {username}: {err}")
+cursor.execute()
+conn.commit()
 
 cursor.close()
 conn.close()  # closes my connection when done

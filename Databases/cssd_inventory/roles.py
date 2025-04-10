@@ -10,23 +10,15 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor() 
 
-#List of privileges to grant
-privileges = ['SELECT']
+try:
+    # Grant SHOW VIEW privilege to the role
+    cursor.execute("GRANT SHOW VIEW ON cssd_inventory.* TO `Sterile Services Employee`@'localhost'")
+    conn.commit()
+    print("Successfully granted SHOW VIEW privilege")
 
-#List of roles to grant privileges to
-roles = [
-    '`Sterile Services Manager`',
-    '`Sterile Services Team Leader`',
-    '`Sterile Services Employee`',
-    '`Inventory Administrator`'
-]
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
 
-#Granting privileges to roles
-for role in roles:
-    for privilege in privileges:
-        grant_sql_privileges = f"GRANT {privilege} ON cssd_inventory.* TO '{role}'@`localhost`"
-        cursor.execute(grant_sql_privileges)
-        conn.commit()
 cursor.close()
 conn.close()  # closes my connection when done
 
