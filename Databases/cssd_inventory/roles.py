@@ -12,10 +12,10 @@ cursor = conn.cursor()
 
 # Execute GRANT statements one at a time
 grants = [
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`instrument inventory` TO 'Sterile Services Manager'@'localhost'",
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`inventory` TO 'Sterile Services Manager'@'localhost'",
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`storage_locations` TO 'Sterile Services Manager'@'localhost'",
-    "GRANT SELECT, INSERT, UPDATE, DELETE ON cssd_inventory.`suppliers` TO 'Sterile Services Manager'@'localhost'"
+    "GRANT SELECT, INSERT, UPDATE  ON cssd_inventory.`instrument inventory` TO 'Sterile Services Team Leader'",
+    "GRANT SELECT, INSERT, UPDATE  ON cssd_inventory.`inventory` TO 'Sterile Services Team Leader'",
+    "GRANT SELECT, INSERT, UPDATE  ON cssd_inventory.`storage_locations` TO 'Sterile Services Team Leader'",
+    "GRANT SELECT, INSERT, UPDATE  ON cssd_inventory.`suppliers` TO 'Sterile Services Team Leader'",
 ]
 
 for grant in grants:
