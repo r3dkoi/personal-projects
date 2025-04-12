@@ -10,10 +10,7 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor() 
 roles = [ 
-    'Sterile Services Manager',
-    'Sterile Services Team Leader',
     'Sterile Services Employee',
-    'Inventory Administrator'
 ]
 
 for role in roles:
@@ -23,6 +20,9 @@ for role in roles:
         print(f"Successfully created role: {role}")
     except mysql.connector.Error as err:
         print(f"Error creating role: {err}")
+
+cursor.execute("FLUSH PRIVILEGES")
+conn.commit()
 
 cursor.close()
 conn.close()  # closes my connection when done
