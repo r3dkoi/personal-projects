@@ -16,12 +16,11 @@ cursor = conn.cursor()
 
 cursor.execute("""
 
-CREATE ROLE IF NOT EXISTS 'Sterile Services Manager';
-               GRANT SELECT, UPDATE, INSERT ON cssd_inventory.* TO 'Sterile Services Manager';
-               GRANT SELECT, UPDATE, INSERT ON cssd_users.* TO 'Sterile Services Manager';
-CREATE USER '19878'@'localhost' IDENTIFIED BY 'Mdwb@Shi1984';
-               GRANT 'Sterile Services Manager' TO '19878'@'localhost';
-               SET DEFAULT ROLE 'Sterile Services Manager' FOR '19878'@'localhost';
+CREATE ROLE IF NOT EXISTS 'Inventory Administrator';
+               GRANT SELECT, UPDATE, INSERT, CREATE, ALTER, DROP, CREATE ROUTINE ON cssd_inventory.* TO 'Inventory Administrator';
+CREATE USER '49201'@'localhost' IDENTIFIED BY 'IoaVW,wa52p';
+               GRANT 'Inventory Administrator' TO '49201'@'localhost';
+               SET DEFAULT ROLE 'Inventory Administrator' FOR '49201'@'localhost';
                FLUSH PRIVILEGES;
 """)
     
