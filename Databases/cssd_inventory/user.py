@@ -4,8 +4,8 @@ import mysql.connector
 conn = mysql.connector.connect( 
     host='localhost', 
     user='root', 
-    password='', 
-    database='cssd_inventory'  # must match the name you created in phpMyAdmin 
+    password='Fu3c0c0Sk3l3d1rge',  # my XAMPP root password
+    database='cssd_users'  # must match the name you created in phpMyAdmin 
 ) 
 #Table for users
 #Don't forget to add foreign key to RoleID to reference RoleID in roles table
@@ -14,21 +14,11 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor() 
 
-cursor.execute(
-    """
-    GRANT 'Sterile Services Employee' TO '314127'@'localhost'
-
-    """
-)
-conn.commit()
-
-# Flush privileges always to ensure changes take effect
-try:
-    cursor.execute("FLUSH PRIVILEGES")
-    conn.commit()
-    print("Successfully flushed privileges")
-except mysql.connector.Error as err:
-    print(f"Error flushing privileges: {err}")
+cursor.execute("""
+ALTER TABLE users MODIFY COLUMN Password VARBINARY(255);
+               
+""")
+    
 
 cursor.close()
 conn.close()  # closes my connection when done
