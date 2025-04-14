@@ -16,19 +16,19 @@ cursor = conn.cursor()
 
 cursor.execute("""
 -- Set the encryption key
-SET @encryption_key = SUBSTRING(SHA2('w£,>nnM61_S2', 512), 1, 32);
+SET @encryption_key = SUBSTRING(SHA2(' T4p0(0kL*da/', 512), 1, 32);
 
--- Re-encrypt one password at a time with known values
+-- Re-encrypt one EmployeeID  at a time with known values
 UPDATE users 
-SET Password = AES_ENCRYPT('IoaVW,wa52p', @encryption_key)
-WHERE UserID = 4;  -- Choose a specific user ID
+SET EmployeeID = AES_ENCRYPT('314127', @encryption_key)
+WHERE UserID = 1;  -- Choose a specific user ID
 
 -- Test decryption on this row
 SELECT 
     UserID, 
-    CAST(AES_DECRYPT(Password, @encryption_key) AS CHAR CHARACTER SET utf8mb4) AS decrypted_password
+    CAST(AES_DECRYPT(EmployeeID, @encryption_key) AS CHAR CHARACTER SET utf8mb4) AS decrypted_password
 FROM users
-WHERE UserID = 4;
+WHERE UserID = 1;
 """)
     
 
