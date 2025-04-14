@@ -15,8 +15,11 @@ conn = mysql.connector.connect(
 cursor = conn.cursor() 
 
 cursor.execute("""
-SET @encryption_key = SUBSTRING(SHA2('T4p0(0kL*da/', 512), 1, 32);
-UPDATE users SET EmployeeID = AES_ENCRYPT(EmployeeID, @encryption_key);
+SET @encryption_key = SUBSTRING(SHA2('w£,>nnM61_S2', 512), 1, 32);
+               UPDATE users
+            SET Password = AES_ENCRYPT('HorsePurpleHatRunBay', @encryption_key)
+               WHERE UserID = 1;
+               
                
 """)
     
