@@ -15,20 +15,13 @@ conn = mysql.connector.connect(
 cursor = conn.cursor() 
 
 cursor.execute("""
--- Set the encryption key
-SET @encryption_key = SUBSTRING(SHA2('w£,>nnM61_S2', 512), 1, 32);
 
--- Re-encrypt one EmployeeID  at a time with known values
-UPDATE users 
-SET EmployeeID = AES_ENCRYPT('49201', @encryption_key)
-WHERE UserID = 4;  -- Choose a specific user ID
-
--- Test decryption on this row
-SELECT 
-    UserID, 
-    CAST(AES_DECRYPT(Password, @encryption_key) AS CHAR CHARACTER SET utf8mb4) AS decrypted_password
-FROM users
-WHERE UserID = 1;
+CREATE ROLE 'Sterile Services Employee';
+               GRANT SELECT ON cssd_inventory.* TO 'Sterile Services Employee';
+CREATE USER '314127'@'localhost' IDENTIFIED BY 'HorsePurpleHatRunBay';
+               GRANT 'Sterile Services Employee' TO '314127'@'localhost';
+               SET DEFAULT ROLE 'Sterile Services Employee' FOR '314127'@'localhost';
+               FLUSH PRIVILEGES;
 """)
     
 
