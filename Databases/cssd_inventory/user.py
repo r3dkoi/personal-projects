@@ -15,7 +15,8 @@ conn = mysql.connector.connect(
 cursor = conn.cursor() 
 
 cursor.execute("""
-ALTER TABLE users MODIFY COLUMN Password VARBINARY(255);
+SET @encryption_key = SUBSTRING(SHA2('w£,>nnM61_S2', 512), 1, 32);
+UPDATE users SET Password = AES_Encrypt(Password, @encryption_key);       
                
 """)
     
