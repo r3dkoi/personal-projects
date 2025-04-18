@@ -1,10 +1,12 @@
 ### MAIN MENU ###
-
-print("Welcome to your study tracker. Please select the options below to begin :)")
+import sys
+sys.path.append("Student Study Tracker\\Logging Study Sessions")
+from log_session import log_session
 
 def main():
     """Function holds the main program, all other options are linked here."""
     while True: #Program continues until user exits
+        print("Welcome to your study tracker. Please select the options below to begin :)")
         print ("==== STUDY TRACKER PROTOTYPE ====")
         print ("MAIN MENU")
         print("1. Log your study sessions")
@@ -15,8 +17,7 @@ def main():
         try:
             choice = int(input("Please enter your choice: "))
             if choice == 1:
-                from log_study_sessions import log_study
-                log_study()
+                log_session()
             elif choice == 2:
                 from manage_subjects import manage_subjects
                 manage_subjects()
@@ -33,3 +34,6 @@ def main():
                 print("Invalid choice. Please try again.")
         except ValueError:
             print("Invalid input. Please enter a number.")
+
+if __name__ == "__main__":
+    main()
