@@ -26,15 +26,17 @@ def study_type_completer(text, state):
     return None
 
 def load_sessions():
-    import json
-    import os
     try:
-        with open('Student Study Tracker\\Logging Study Sessions\\saved_study_sessions.json', "r") as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return []
-        print("No previous study sessions found. Starting fresh.")
+          with open('Student Study Tracker\\Logging Study Sessions\\saved_study_sessions.json', "r") as f:
+              data = json.load(f)
+              #Convert dictionary to list if needed to append new sessions
+                if isinstance(data, dict):
+                    return list(data.values())
+              return data
+    except (FileNotFoundError, json.JSONDecodeError): 
+          # If the file doesn't exist or is empty, return an empty list
+          return []
 
 def save_sessions(sessions):
     with open('Student Study Tracker\\Logging Study Sessions\\saved_study_sessions.json', "w") as f:
-        json.dump(sessions, f, indent=4)
+        json.dump(sessions, f, indent=4) #Saves as a file in JSON format with indentation for readability
