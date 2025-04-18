@@ -5,16 +5,26 @@ import readline #For auto-suggesting pre-made subjects
 saved_study_sessions = "study_sessions.json"
 
 #Loading subjects from JSON file for tab completion
-with open('subject_areas.json', 'r') as f:
+with open('Student Study Tracker\Logging Study Sessions\subject_areas.json', 'r') as f:
           subject_list = json.load(f)
 
-def completer(text, state):
+def subject_completer(text, state):
     """Auto-completes subject names from the list."""
     options = [s for s in subject_list if s.lower().startswith(text.lower())]
     if state < len(options):
         return options[state]
     return None
 
+#Loading study_types from JSON file for tab completion
+with open('Student Study Tracker\Logging Study Sessions\study_type.json', 'r') as f:
+            study_type_list = json.load(f)
+
+def study_type_completer(text, state):  
+    """Auto-completes study types from the list."""
+    options = [s for s in study_type_list if s.lower().startswith(text.lower())]
+    if state < len(options):
+        return options[state]
+    return None
 
 def load_sessions():
     try:
