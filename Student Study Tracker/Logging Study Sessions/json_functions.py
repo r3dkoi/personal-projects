@@ -29,9 +29,9 @@ def load_sessions():
     try:
           with open('Student Study Tracker\\Logging Study Sessions\\saved_study_sessions.json', "r") as f:
               data = json.load(f)
-              #Convert dictionary to list if needed to append new sessions
-                if isinstance(data, dict):
-                    return list(data.values())
+              # Convert dictionary to list if needed to append new sessions
+              if isinstance(data, dict):
+                  return list(data.values())
               return data
     except (FileNotFoundError, json.JSONDecodeError): 
           # If the file doesn't exist or is empty, return an empty list
