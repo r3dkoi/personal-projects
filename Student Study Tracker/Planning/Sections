@@ -2,13 +2,14 @@ SECTION 1.
 
 Log Study Sessions
 1. Subject
-    Create a json where the user inputs a subject and its saved
 2. Duration
 3. Date of Study done
 4. Type of study 
     - Coding
     - Reading
     - Assignments
+ALL OF THIS SHOULD BE SAVED INTO A JSON FILE so it can be
+CREATED ALL THIS INTO A DATAFRAME 
 
 SECTION 2.
 
