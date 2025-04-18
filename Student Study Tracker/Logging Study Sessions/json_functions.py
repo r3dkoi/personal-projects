@@ -14,14 +14,14 @@ def completer(text, state):
     if state < len(options):
         return options[state]
     return None
-    readline.set_completer(completer)
-    readline.parse_and_bind("tab: complete")
+
 
 def load_sessions():
     try:
         with open(saved_study_sessions, "r") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
+        return []
         print("No previous study sessions found. Starting fresh.")
 
 def save_sessions(sessions):
