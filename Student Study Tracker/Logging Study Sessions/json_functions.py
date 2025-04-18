@@ -6,6 +6,9 @@ saved_study_sessions = "study_sessions.json"
 #Loading subjects from JSON file for tab completion
 with open('Student Study Tracker\\Logging Study Sessions\\subject_areas.json', 'r') as f:
           subject_list = json.load(f)
+          subject_list = []
+          for category in data.values():
+               subject_list.extend(category) # Flatten the list of subjects
 
 def subject_completer(text, state):
     """Auto-completes subject names from the list."""
