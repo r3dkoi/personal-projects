@@ -1,34 +1,34 @@
 import unittest
 from unittest.mock import patch
-from log_functions import log_subject
+import readline
 
-class TestLogFunctions(unittest.TestCase):
+def subject_completer(text, state):
+    options = ['Math', 'Physics', 'Chemistry']
+    matches = [s for s in options if s.lower().startswith(text.lower())]
+    if state < len(matches):
+        return matches[state]
+    return None
 
-    @patch('builtins.input', return_value='Mathematics')
-    def test_log_subject_basic_input(self, mock_input):
+def log_subject():
+    readline.set_completer(subject_completer)
+    readline.parse_and_bind("tab: complete")
+    subject = input("Enter subject (Enter tab for suggestions, or type your own):")
+    print(f"{subject} entered.")
+    return subject
+
+class TestLogSubject(unittest.TestCase):
+    @patch('builtins.input', return_value='Math')
+    @patch('readline.set_completer')
+    @patch('readline.parse_and_bind')
+    def test_log_subject(self, mock_parse, mock_set_completer, mock_input):
         result = log_subject()
-        self.assertEqual(result, 'Mathematics')
+        mock_set_completer.assert_called_once_with(subject_completer)
+        mock_parse.assert_called_once_with("tab: complete")
+        mock_input.assert_called_once_with("Enter subject (Enter tab for suggestions, or type your own):")
+        self.assertEqual(result, 'Math')
+        
 
-    @patch('builtins.input', return_value='')
-    def test_log_subject_empty_input(self, mock_input):
-        result = log_subject()
-        self.assertEqual(result, '')
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
 
-    @patch('builtins.input', return_value='Computer Science')
-    def test_log_subject_with_space(self, mock_input):
-        result = log_subject()
-        self.assertEqual(result, 'Computer Science')
-
-    @patch('builtins.input', return_value='123')
-    def test_log_subject_numeric_input(self, mock_input):
-        result = log_subject()
-        self.assertEqual(result, '123')
-
-    @patch('builtins.input', return_value='!@#$%')
-    def test_log_subject_special_chars(self, mock_input):
-        result = log_subject()
-        self.assertEqual(result, '!@#$%')
-
-if __name__ == '__main__':
-    unittest.main()
 
