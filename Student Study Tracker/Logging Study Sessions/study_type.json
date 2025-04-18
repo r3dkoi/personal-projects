@@ -1,18 +1,16 @@
-{
-    "study type:": [
-        "Lecture",
-        "Reading",
-        "Practice Problems",
-        "Group Study",
-        "Online Work",
-        "Flashcards",
-        "Project Work",
-        "Review Sessions",
-        "Tutoring",
-        "Coding",
-        "Research",
-        "Self-Study",
-        "Exam Preparation",
-        "Notetaking"
-    ]
-}
+[
+    "Lecture",
+    "Reading",
+    "Practice Problems",
+    "Group Study",
+    "Online Work",
+    "Flashcards",
+    "Project Work",
+    "Review Sessions",
+    "Tutoring",
+    "Coding",
+    "Research",
+    "Self-Study",
+    "Exam Preparation",
+    "Notetaking"
+]
