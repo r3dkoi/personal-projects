@@ -1,0 +1,31 @@
+SECTION 1.
+
+Log Study Sessions
+1. Subject
+    Create a json where the user inputs a subject and its saved
+2. Duration
+3. Date of Study done
+4. Type of study 
+    - Coding
+    - Reading
+    - Assignments
+
+SECTION 2.
+
+Manage Subjects
+1. Add/edit/remove subjects
+2. Each subject should have added attributes by user or suggested; e.g goal hours per week, difficulty level
+
+SECTION 3.
+Search and Filter Sessions
+1. By subject, date range
+
+SECTION 4:
+Visualisation of Session Summary 
+1. Total hours studied overall by subject
+2. Longest/shortest study session
+3. Remaining hours to meet weekly goal (if applicable)
+
+ERROR HANDLING
+1. Prevent negative study times
+2. Handle empty or corrupted data files

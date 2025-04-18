@@ -1,0 +1,35 @@
+{
+    "Arts and Humanities": [
+        "Literature and Language Arts",
+        "Visual Arts",
+        "Music",
+        "History and Culture",
+        "Philosophy and Ethics",
+        "Religious Studies",
+        "Theater and Performance",
+        "Media and Communication"
+    ],
+    "STEM Fields": [
+        "Mathematics",
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Information Technology",
+        "Computer Science",
+        "Engineering"
+    ],
+    "Social Sciences": [
+        "Geography",
+        "Economics and Business",
+        "Civics and Citizenship",
+        "Psychology",
+        "Sociology"
+    ],
+
+    "Health and Physical Education": [
+        "Physical Education and Sports Science",
+        "Health Sciences",
+        "Nutrition and Dietetics",
+        "Mental Wellbeing"
+    ]
+}
