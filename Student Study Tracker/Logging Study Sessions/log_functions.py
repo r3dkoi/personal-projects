@@ -38,6 +38,7 @@ def log_date():
         if date == "":
             date = datetime.now().strftime("%d%m%Y")
             print(f"{date} set.")
+            return date
         else:
             datetime.strptime(date, "%d/%m/%Y")  # Validate date format
             print(f"Date {date} entered.")
@@ -48,8 +49,11 @@ def log_date():
 
 def log_study_type():
     readline.set_completer(study_type_completer)
-    # Set up tab completion for study types
     readline.parse_and_bind("tab: complete")
+    # Set up tab completion for study types
     study_type = input("Enter type of study (Enter tab for suggestions or type your own): ")
     print(f"Study type {study_type} entered.")
-    return study_type
+    if not study_type.strip():
+        print("This field cannot be left empty.")
+        return log_study_type()
+  
