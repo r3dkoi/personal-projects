@@ -12,7 +12,7 @@ sessions = load_sessions()
 def log_subject():
     readline.set_completer(subject_completer)
     readline.parse_and_bind("tab: complete")
-    subject = input("Enter subject (Enter tab for suggestions, or type your own):")
+    subject = input("Enter subject (Enter tab for suggestions, or type your own): ")
     print(f"{subject} entered.")
     return subject
 
@@ -34,7 +34,7 @@ def log_duration():
 
 def log_date():
     try:
-        date = input("Enter date (DD/MM/YYYY) or press enter for today:")
+        date = input("Enter date (DD/MM/YYYY) or press enter for today: ")
         if date == "":
             date = datetime.now().strftime("%d%m%Y")
             print(f"{date} set.")
@@ -52,8 +52,9 @@ def log_study_type():
     readline.parse_and_bind("tab: complete")
     # Set up tab completion for study types
     study_type = input("Enter type of study (Enter tab for suggestions or type your own): ")
-    print(f"Study type {study_type} entered.")
     if not study_type.strip():
-        print("This field cannot be left empty.")
-        return log_study_type()
+        print("Study type cannot be empty.")
+        return log_study_type()  # Retry if empty
+    print(f"Study type {study_type} entered.")
+    return study_type
   
