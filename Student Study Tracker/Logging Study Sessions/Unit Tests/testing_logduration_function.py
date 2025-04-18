@@ -16,7 +16,6 @@ def log_duration():
         print("Invalid input. Please enter a number.")
 
 
-
 class TestLogDuration(unittest.TestCase):
     @patch('builtins.input', return_value='1.5')
     @patch('sys.stdout', new_callable=StringIO)

@@ -1,5 +1,4 @@
 import json
-import readline #For auto-suggesting pre-made subjects
 
 #File to store study sessions
 saved_study_sessions = "study_sessions.json"
@@ -27,6 +26,8 @@ def study_type_completer(text, state):
     return None
 
 def load_sessions():
+    import json
+    import os
     try:
         with open(saved_study_sessions, "r") as f:
             return json.load(f)
