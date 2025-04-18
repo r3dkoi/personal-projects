@@ -1,6 +1,7 @@
 import json
+from datetime import datetime
 import readline
-from json_functions import load_sessions, save_sessions, completer
+from json_functions import load_sessions, save_sessions, subject_completer, study_type_completer
 
 #File to store study sessions
 saved_study_sessions = "study_sessions.json"
@@ -9,29 +10,46 @@ sessions = load_sessions()
 
 # Function to log subject 
 def log_subject():
-    readline.set_completer(completer)
+    readline.set_completer(subject_completer)
     readline.parse_and_bind("tab: complete")
     subject = input("Enter subject (Enter tab for suggestions, or type your own):")
     print(f"{subject} entered.")
+    return subject
+
 
 def log_duration():
     duration = input("Enter study duration in hours (e.g., 1.5): ")
     try:
-        duration = float(duration)
+        duration = float(duration)  # Allows user to input a float value
+        if duration <= 0:
+            raise ValueError("Duration must be positive.")
+        if duration > 24:
+            raise ValueError("Duration cannot exceed 24 hours.")
         print(f"Duration of {duration} hours entered.")
+        return duration
     except ValueError:
         print("Invalid input. Please enter a number.")
+        return log_duration()
 
 
-# Creating new session entries and saving them
-new_session = {
-    "Subject": subject,
-    "Duration": duration,
-    "Date": date,
-    "Type of study": study_type,
-}
-if sessions is None: 
-    sessions = [] #Turns sessions into a list if it is None
-    sessions.append(new_session) #Then appends the list into the save file
+def log_date():
+    try:
+        date = input("Enter date (DD/MM/YYYY) or press enter for today:")
+        if date == "":
+            date = datetime.now().strftime("%d%m%Y")
+            print(f"{date} set.")
+        else:
+            datetime.strptime(date, "%d/%m/%Y")  # Validate date format
+            print(f"Date {date} entered.")
+            return date
+    except ValueError:
+        print("Invalid date format. Please enter in DD/MM/YYYY format.")
+        return log_date()  # Retry if invalid
 
-save_sessions(sessions) #Saves the sessions to the JSON file
+def log_study_type():
+    readline.set_completer(study_type_completer)
+    # Set up tab completion for study types
+    readline.parse_and_bind("tab: complete")
+    study_type = input("Enter type of study (Enter tab for suggestions or type your own): ")
+    print(f"Study type {study_type} entered.")
+    return study_type
