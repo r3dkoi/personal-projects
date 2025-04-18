@@ -29,12 +29,12 @@ def load_sessions():
     import json
     import os
     try:
-        with open(saved_study_sessions, "r") as f:
+        with open('Student Study Tracker\\Logging Study Sessions\\saved_study_sessions.json', "r") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         return []
         print("No previous study sessions found. Starting fresh.")
 
 def save_sessions(sessions):
-    with open(saved_study_sessions, "w") as f:
+    with open('Student Study Tracker\\Logging Study Sessions\\saved_study_sessions.json', "w") as f:
         json.dump(sessions, f, indent=4)
