@@ -11,5 +11,11 @@
         "Duration": 1.0,
         "Date": "22/3/2023",
         "Type of study": null
+    },
+    {
+        "Subject": "Geography",
+        "Duration": 1.0,
+        "Date": "18/4/2025",
+        "Type of study": "Research"
     }
 ]
